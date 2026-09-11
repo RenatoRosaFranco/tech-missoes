@@ -5,7 +5,8 @@ import { Breadcrumb } from "./breadcrumb";
 import { PageMotion } from "./page-motion";
 import { Technologies } from "./technologies";
 import { StarterKit } from "./starter-kit";
-import { ThemeToggle } from "./theme-toggle";
+import { SiteHeader } from "./site-header";
+import { CommunityChat } from "./community-chat";
 import { communityLinks } from "./community-links";
 import { MissionArt } from "./mission-art";
 import { TypedLine } from "./typed-line";
@@ -65,21 +66,13 @@ function TrackIcon({ kind }: { kind: string }) {
 }
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [selectedTrack, setSelectedTrack] = useState(0);
   return <>
     <PageMotion />
     <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <div className="location-bar"><div className="container"><span><span className="location-dot" />CERRO LARGO, RS · REGIÃO DAS MISSÕES</span><span aria-hidden="true"><TypedLine strings={locationTyped} typeSpeed={28} /></span></div></div>
     <div className="site-header">
-    <header className="header container">
-      <a className="brand" href="#inicio" aria-label="Tech Missões, início"><Mark /><span>tech<span>missões<span className="brand-period">.</span></span></span></a>
-      <ThemeToggle />
-      <button className="menu-toggle" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={menuOpen} aria-controls="navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "Fechar −" : "Menu +"}</button>
-      <nav id="navigation" className={menuOpen ? "navigation open" : "navigation"} aria-label="Navegação principal">
-        <a href="#comunidade" onClick={() => setMenuOpen(false)}>A comunidade</a><a href="#areas" onClick={() => setMenuOpen(false)}>Áreas de estudo</a><a href="#como-funciona" onClick={() => setMenuOpen(false)}>Como funciona</a><a href="#starter-kit" onClick={() => setMenuOpen(false)}>Nosso kit</a><a className="nav-cta" href="#faca-parte" onClick={() => setMenuOpen(false)}>Faça parte <Arrow /></a>
-      </nav>
-    </header>
+    <SiteHeader />
     <Breadcrumb />
     </div>
     <main id="conteudo">
@@ -91,7 +84,7 @@ export default function Home() {
       <section className="areas section container" id="areas"><div className="section-heading"><div><span className="eyebrow">01 / NOSSAS ÁREAS DE ESTUDO</span><h2>Três caminhos.<br /><TypedLine inView strings={areasTyped} /></h2></div><p>Exploramos as tecnologias que movem o mundo.<br />Com fundamentos sólidos e mãos na massa.</p></div><div className="track-grid">{tracks.map((track, index) => <a href="#participe" className="track-card" key={track.number} onClick={() => setSelectedTrack(index)}><div className="track-top"><TrackIcon kind={track.icon} /><span>{track.number}</span></div><h3>{track.name}</h3><p>{track.description}</p><div className="track-bottom"><span>{track.tags}</span><Arrow /></div></a>)}</div></section>
       <Technologies />
       <section className="community" id="comunidade"><div className="container community-inner"><div><span className="eyebrow">03 / A NOSSA ESSÊNCIA</span><h2>Raízes nas Missões.<br />Olhar para o <em><TypedLine inView strings={communityTyped} /></em></h2></div><div><p className="community-lead">Grandes ideias também nascem<br />fora dos grandes centros.</p><p>A Tech Missões nasce em Cerro Largo com uma convicção: conhecimento cresce quando é compartilhado. Queremos aproximar quem está começando de quem já tem experiência, unindo diferentes perspectivas em torno de desafios reais.</p><p>Um espaço para perguntar, experimentar e construir. Porque o próximo passo da nossa região pode começar com uma conversa, uma linha de código ou uma ideia sua.</p><span className="community-location"><span className="location-dot" /> CERRO LARGO · RIO GRANDE DO SUL · BRASIL</span></div></div></section>
-      <section className="section container how" id="como-funciona"><div className="section-heading"><div><span className="eyebrow">04 / DO CONHECIMENTO À PRÁTICA</span><h2><TypedLine inView loop={false} strings={howTyped} /></h2></div><p>Uma comunidade se constrói com participação.<br />Cada pessoa tem algo a aprender e a ensinar.</p></div><div className="how-grid">{[{ title: "Estudamos juntos", text: "Grupos de estudo para aprofundar fundamentos, discutir referências e trocar descobertas em cada área." }, { title: "Tiramos ideias do papel", text: "Projetos colaborativos para experimentar tecnologias e desenvolver soluções conectadas à nossa realidade." }, { title: "Compartilhamos o caminho", text: "Trocas de experiências, demonstrações e conversas abertas. O aprendizado de uma pessoa abre portas para outras." }].map((item, i) => <div key={item.title}><span className="step-number">0{i + 1}</span><h3>{item.title}</h3><p>{item.text}</p></div>)}</div></section>
+      <section className="section container how" id="como-funciona"><div className="section-heading"><div><span className="eyebrow">04 / DO CONHECIMENTO À PRÁTICA</span><h2><TypedLine inView loop={false} strings={howTyped} /></h2></div><p>Uma comunidade se constrói com participação.<br />Cada pessoa tem algo a aprender e a ensinar.</p></div><div className="how-grid">{[{ title: "Estudamos juntos", text: "Grupos de estudo para aprofundar fundamentos, discutir referências e trocar descobertas em cada área." }, { title: "Tiramos ideias do papel", text: "Projetos colaborativos para experimentar tecnologias e desenvolver soluções conectadas à nossa realidade." }, { title: "Compartilhamos o caminho", text: "Trocas de experiências, demonstrações e conversas abertas. O aprendizado de uma pessoa abre portas para outras." }].map((item, i) => <div className="how-step" key={item.title}><span className="step-number">0{i + 1}</span><h3>{item.title}</h3><p>{item.text}</p></div>)}</div></section>
       <section className="join container" id="participe"><div className="join-copy"><span className="eyebrow">05 / O SEU PONTO DE PARTIDA</span><h2>Curiosidade é<br /><TypedLine inView strings={joinTyped} /></h2><p>Iniciante, estudante ou profissional: existe espaço para você. Escolha uma área e descubra um primeiro caminho para colocar seu conhecimento em movimento.</p><span className="join-note">Diferentes trajetórias. A mesma vontade de aprender.</span></div><div className="track-selector"><label htmlFor="track">O que você quer explorar?</label><select id="track" value={selectedTrack} onChange={event => setSelectedTrack(Number(event.target.value))}>{tracks.map((track, i) => <option key={track.number} value={i}>{track.name}</option>)}</select><div aria-live="polite" aria-atomic="true"><div className="track-plan" key={selectedTrack}><span className="plan-label">SEU PRIMEIRO DESAFIO</span><h3>{tracks[selectedTrack].name}</h3><ol>{tracks[selectedTrack].steps.map(step => <li key={step}>{step}</li>)}</ol></div></div><p className="selector-note">Uma sugestão para começar, no seu ritmo.</p></div></section>
       <section className="membership container" id="faca-parte" aria-labelledby="membership-title">
         <div className="membership-copy">
@@ -110,5 +103,6 @@ export default function Home() {
       <StarterKit />
     </main>
     <footer className="container footer"><a className="brand" href="#inicio" aria-label="Tech Missões, voltar ao início"><Mark /><span>tech<span>missões<span className="brand-period">.</span></span></span></a><p><TypedLine inView strings={footerTyped} /></p><nav className="social-links" aria-label="Redes sociais da Tech Missões">{socialProfiles.map(profile => profile.href ? <a key={profile.name} href={profile.href} target="_blank" rel="noopener noreferrer" title={profile.name} aria-label={`${profile.name} da Tech Missões (abre em nova aba)`}><SocialIcon name={profile.name} /></a> : <button type="button" className="social-pending" key={profile.name} aria-disabled="true" aria-label={`${profile.name}: em breve`} title={`${profile.name} — em breve`}><SocialIcon name={profile.name} /></button>)}</nav><div><span>TECH MISSÕES © {new Date().getFullYear()}</span><a href="#inicio">Feito de pessoas e possibilidades. <span aria-hidden="true">↑</span></a></div></footer>
+    <CommunityChat />
   </>;
 }

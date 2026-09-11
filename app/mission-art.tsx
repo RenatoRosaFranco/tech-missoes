@@ -1,19 +1,21 @@
-export function MissionArt() {
+export function MissionArt({ ids = "home" }: { ids?: string }) {
+  const grid = `${ids}-grid`;
+  const lines = `${ids}-lines`;
   return (
     <div className="mission-art" aria-label="Ilustração arquitetônica abstrata de um arco missioneiro conectado a circuitos" role="img">
       <div className="art-label"><span>RAÍZES LOCAIS.</span><span>CONEXÕES SEM LIMITES.</span></div>
       <svg viewBox="0 0 600 590" fill="none" aria-hidden="true">
         <defs>
-          <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0v30" stroke="#fff" strokeOpacity=".09" strokeWidth=".6" /></pattern>
-          <pattern id="lines" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 0v7" stroke="#f0b8ac" strokeOpacity=".5" strokeWidth="1" /></pattern>
+          <pattern id={grid} width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0v30" stroke="#fff" strokeOpacity=".09" strokeWidth=".6" /></pattern>
+          <pattern id={lines} width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 0v7" stroke="#f0b8ac" strokeOpacity=".5" strokeWidth="1" /></pattern>
         </defs>
-        <path fill="url(#grid)" d="M0 0h600v590H0z" />
+        <path fill={`url(#${grid})`} d="M0 0h600v590H0z" />
         <circle cx="308" cy="298" r="210" stroke="#e3a293" strokeOpacity=".3" />
         <circle cx="308" cy="298" r="165" stroke="#e3a293" strokeOpacity=".2" strokeDasharray="3 7" />
         <path d="M54 461h492M308 66v444M62 298h488" stroke="#e4a598" strokeOpacity=".3" strokeDasharray="5 6" />
         <path d="m135 442 66-38V239c0-76 48-126 112-126 23 0 44 6 61 17-31-28-64-42-101-30-83 17-138 75-138 160z" fill="#721b24" stroke="#efa797" />
         <path d="M201 404V246c0-65 43-118 98-118s99 53 99 118v158h-62V250c0-33-17-60-37-60s-37 27-37 60v154z" fill="#e7b0a0" />
-        <path d="M201 404V246c0-65 43-118 98-118s99 53 99 118v158h-62V250c0-33-17-60-37-60s-37 27-37 60v154z" fill="url(#lines)" stroke="#ffd5bf" />
+        <path d="M201 404V246c0-65 43-118 98-118s99 53 99 118v158h-62V250c0-33-17-60-37-60s-37 27-37 60v154z" fill={`url(#${lines})`} stroke="#ffd5bf" />
         <path d="m398 404 51 30V257c0-58-21-108-64-132l-41-22c35 24 54 69 54 143z" fill="#741c26" stroke="#dc8e82" />
         <path d="m262 404 34 20V252c0-24 6-40 16-47-4-9-9-15-13-15-20 0-37 27-37 60z" fill="#77222b" stroke="#e7ab99" />
         <path d="m135 442 67 38 60-35v-41l-61 35v-35zM336 404v42l62 35 51-30v-17l-51 30z" fill="#cc796e" stroke="#f1b7a5" />
