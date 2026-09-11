@@ -1,5 +1,11 @@
 import { HomePage } from "./home-page";
+import { getAmpUrl } from "@/lib/site";
 
 export default function Page() {
-  return <HomePage />;
+  return (
+    <>
+      <link rel="amphtml" href={getAmpUrl()} />
+      <HomePage />
+    </>
+  );
 }

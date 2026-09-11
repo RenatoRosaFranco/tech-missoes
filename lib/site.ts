@@ -24,6 +24,10 @@ export function getSiteUrl() {
   return "http://localhost:3000";
 }
 
+export function getAmpUrl() {
+  return `${getSiteUrl()}/amp`;
+}
+
 export function googleSiteVerification() {
   return process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() || undefined;
 }
