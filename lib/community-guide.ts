@@ -17,6 +17,9 @@ const aliases: [RegExp, string][] = [
   [/\b(ia|ai|ml)\b/g, "inteligencia artificial"],
   [/\b(dev|devs|programar|programacao|codigo)\b/g, "software"],
   [/\b(robo|robos)\b/g, "robotica"],
+  [/\b(ci\/cd|pipeline|infra|deploy)\b/g, "devops"],
+  [/\b(script|scripts|rpa|automatizar)\b/g, "automacao"],
+  [/\b(negocio|startup|empreender|produto)\b/g, "empreendedorismo"],
   [/\b(zap|wpp|whats)\b/g, "whatsapp"],
   [/\b(entrar|juntar|inscrever|membro|participar)\b/g, "fazer parte"],
   [/\b(preco|valor|quanto custa|loja)\b/g, "kit"],
@@ -76,7 +79,7 @@ function retrieve(query: string, history: ChatTurn[]) {
 
 function compose(docs: KnowledgeDoc[]) {
   if (docs.length === 0) {
-    return "Consigo responder o que está na comunidade Tech Missões: quem somos, onde nascemos, as três áreas de estudo, como participar, as tecnologias e o kit. Reformule com um desses assuntos, ou percorra o site — a conversa da comunidade também começa na seção Faça parte.";
+    return "Consigo responder o que está na comunidade Tech Missões: quem somos, onde nascemos, as áreas de estudo, como participar, as tecnologias e o kit. Reformule com um desses assuntos, ou percorra o site — a conversa da comunidade também começa na seção Faça parte.";
   }
   return docs[0].answer;
 }
@@ -103,7 +106,7 @@ Se a pergunta sair desse conteúdo, diga o que você cobre e convide a pessoa a 
 Não invente eventos, preços, links, nomes de pessoas, parcerias ou datas que não estejam no material.
 Não cite coordenadas geográficas.
 Quando citar um endereço, use markdown [texto curto](url). Nunca cole a URL completa no meio da frase.
-Ao nomear as áreas de estudo, escreva **engenharia de software**, **inteligência artificial** e **robótica**.
+Ao nomear as áreas de estudo, escreva **engenharia de software**, **inteligência artificial**, **robótica**, **DevOps**, **automação** e **empreendedorismo**.
 
 ${knowledgePrompt()}`;
 }

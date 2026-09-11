@@ -1,5 +1,6 @@
 import { communityKnowledge } from "@/lib/community-knowledge";
 import { getSiteUrl, siteDescription, siteName, sitePlace, socialUrls } from "@/lib/site";
+import { studyTracks } from "@/lib/study-tracks";
 
 const faqQuestions: Record<string, string> = {
   identidade: "O que é a Tech Missões?",
@@ -56,7 +57,7 @@ export function siteJsonLd() {
           longitude: sitePlace.longitude,
         },
         areaServed: [sitePlace.locality, sitePlace.area, sitePlace.regionName, "Brasil"],
-        knowsAbout: ["Engenharia de software", "Inteligência artificial", "Robótica", "Programação"],
+        knowsAbout: [...studyTracks.map(track => track.name), "Programação"],
         ...(sameAs.length ? { sameAs } : {}),
       },
       {
@@ -83,11 +84,11 @@ export function siteJsonLd() {
         "@type": "ItemList",
         "@id": `${siteUrl}/#areas`,
         name: "Áreas de estudo da Tech Missões",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Engenharia de software" },
-          { "@type": "ListItem", position: 2, name: "Inteligência artificial" },
-          { "@type": "ListItem", position: 3, name: "Robótica" },
-        ],
+        itemListElement: studyTracks.map((track, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: track.name,
+        })),
         isPartOf: { "@id": websiteId },
       },
       {

@@ -49,7 +49,7 @@ export default function OpenGraphImage() {
             {siteTagline}
           </div>
           <div style={{ fontSize: 26, color: "#65665f", maxWidth: 820 }}>
-            Comunidade de estudo em software, inteligência artificial e robótica. Cerro Largo, região das Missões, RS.
+            Comunidade de estudo em software, IA, robótica, DevOps, automação e empreendedorismo. Cerro Largo, região das Missões, RS.
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 18, letterSpacing: 2, color: "#9b2635", textTransform: "uppercase" }}>

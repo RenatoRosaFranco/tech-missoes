@@ -9,13 +9,13 @@ import { LazyChat } from "./lazy-chat";
 import { LazyTechnologies } from "./lazy-technologies";
 import { LazyPageMotion } from "./lazy-page-motion";
 
-const heroTyped = ["o futuro.", "software.", "inteligência.", "robótica.", "comunidade."];
+const heroTyped = ["o futuro.", "software.", "inteligência.", "robótica.", "automação.", "comunidade."];
 const locationTyped = [
   "CONHECIMENTO QUE CONECTA. TECNOLOGIA QUE TRANSFORMA.",
   "APRENDER COM PROFUNDIDADE. CONSTRUIR NA PRÁTICA.",
   "RAÍZES LOCAIS. CONEXÕES SEM LIMITES.",
 ];
-const areasTyped = ["Infinitas conexões.", "Três trilhas abertas.", "Mãos na massa."];
+const areasTyped = ["Infinitas conexões.", "Seis trilhas abertas.", "Mãos na massa."];
 const communityTyped = ["futuro.", "código.", "território."];
 const howTyped = ["Aprender. Fazer. Compartilhar."];
 const joinTyped = ["o único pré-requisito.", "o primeiro passo.", "o que nos une."];
@@ -69,7 +69,7 @@ export async function HomePage() {
         <MissionArt />
       </section>
       <div className="principles container"><span>MENTES CURIOSAS.<br /><strong>PROPÓSITO EM COMUM.</strong></span><p><TypedLine inView loop={false} strings={principles[0]} /></p><span className="principle-star">✳</span><p><TypedLine inView loop={false} strings={principles[1]} /></p><span className="principle-star">✳</span><p><TypedLine inView loop={false} strings={principles[2]} /></p></div>
-      <section className="areas section container" id="areas"><div className="section-heading"><div><span className="eyebrow">01 / NOSSAS ÁREAS DE ESTUDO</span><h2>Três caminhos.<br /><TypedLine inView strings={areasTyped} /></h2></div><p>Exploramos as tecnologias que movem o mundo.<br />Com fundamentos sólidos e mãos na massa.</p></div><TrackCards /></section>
+      <section className="areas section container" id="areas"><div className="section-heading"><div><span className="eyebrow">01 / NOSSAS ÁREAS DE ESTUDO</span><h2>Seis caminhos.<br /><TypedLine inView strings={areasTyped} /></h2></div><p>Exploramos as tecnologias que movem o mundo.<br />Com fundamentos sólidos e mãos na massa.</p></div><TrackCards /></section>
       <LazyTechnologies />
       <section className="community" id="comunidade"><div className="container community-inner"><div><span className="eyebrow">03 / A NOSSA ESSÊNCIA</span><h2>Raízes nas Missões.<br />Olhar para o <em><TypedLine inView strings={communityTyped} /></em></h2></div><div><p className="community-lead">Grandes ideias também nascem<br />fora dos grandes centros.</p><p>A Tech Missões nasce em Cerro Largo com uma convicção: conhecimento cresce quando é compartilhado. Queremos aproximar quem está começando de quem já tem experiência, unindo diferentes perspectivas em torno de desafios reais.</p><p>Um espaço para perguntar, experimentar e construir. Porque o próximo passo da nossa região pode começar com uma conversa, uma linha de código ou uma ideia sua.</p><span className="community-location"><span className="location-dot" /> CERRO LARGO · RIO GRANDE DO SUL · BRASIL</span></div></div></section>
       {Partners ? <Partners /> : null}

@@ -1,5 +1,6 @@
 import { communityLinks, starterKit } from "@/app/community-links";
 import { siteJsonLd } from "@/lib/site-json-ld";
+import { studyTracks } from "@/lib/study-tracks";
 import {
   getSiteUrl,
   googleAnalyticsId,
@@ -16,42 +17,6 @@ function escapeHtml(value: string) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
-
-const tracks = [
-  {
-    number: "01",
-    name: "Engenharia de software",
-    description: "Mais do que escrever código. Entender sistemas, compartilhar boas práticas e construir software que faz a diferença.",
-    tags: "ARQUITETURA · OPEN SOURCE · DESENVOLVIMENTO",
-    steps: [
-      "Explore lógica de programação e controle de versão com Git.",
-      "Construa uma aplicação para um problema da sua comunidade.",
-      "Documente suas decisões e convide alguém para revisar o código.",
-    ],
-  },
-  {
-    number: "02",
-    name: "Inteligência artificial",
-    description: "Da curiosidade à aplicação. Investigar dados, entender modelos e experimentar novas possibilidades com responsabilidade.",
-    tags: "MACHINE LEARNING · DADOS · IA APLICADA",
-    steps: [
-      "Pratique Python explorando pequenos conjuntos de dados.",
-      "Experimente um modelo simples e compare seus resultados.",
-      "Compartilhe o experimento, suas limitações e o que aprendeu.",
-    ],
-  },
-  {
-    number: "03",
-    name: "Robótica",
-    description: "Ideias que ganham movimento. Conectar programação, eletrônica e criatividade para interagir com o mundo real.",
-    tags: "ELETRÔNICA · AUTOMAÇÃO · PROTOTIPAGEM",
-    steps: [
-      "Conheça circuitos, sensores e microcontroladores em um simulador.",
-      "Programe um protótipo que responda a uma leitura de sensor.",
-      "Registre o circuito e o código para que outras pessoas possam reproduzir o projeto.",
-    ],
-  },
-];
 
 const technologies = [
   { name: "TypeScript", area: "Software" },
@@ -226,9 +191,9 @@ ${gaId ? `<amp-analytics type="gtag" data-credentials="include"><script type="ap
 </div>
 <section class="wrap section" id="areas">
 <div class="eyebrow">01 / NOSSAS ÁREAS DE ESTUDO</div>
-<h2>Três caminhos. Infinitas conexões.</h2>
+<h2>Seis caminhos. Infinitas conexões.</h2>
 <p>Exploramos as tecnologias que movem o mundo. Com fundamentos sólidos e mãos na massa.</p>
-<div class="cards">${tracks.map(track => `<article class="card"><span>${escapeHtml(track.number)}</span><h3>${escapeHtml(track.name)}</h3><p>${escapeHtml(track.description)}</p><div class="tags">${escapeHtml(track.tags)}</div></article>`).join("")}</div>
+<div class="cards">${studyTracks.map(track => `<article class="card"><span>${escapeHtml(track.number)}</span><h3>${escapeHtml(track.name)}</h3><p>${escapeHtml(track.description)}</p><div class="tags">${escapeHtml(track.tags)}</div></article>`).join("")}</div>
 </section>
 <section class="wrap section" id="tecnologias">
 <div class="eyebrow">02 / TECNOLOGIAS E FERRAMENTAS</div>
@@ -259,7 +224,7 @@ ${gaId ? `<amp-analytics type="gtag" data-credentials="include"><script type="ap
 <div class="eyebrow">06 / O SEU PONTO DE PARTIDA</div>
 <h2>Curiosidade é o único pré-requisito.</h2>
 <p>Iniciante, estudante ou profissional: existe espaço para você. Escolha uma área e descubra um primeiro caminho para colocar seu conhecimento em movimento.</p>
-<div class="cards">${tracks.map(track => `<article class="card"><span>SEU PRIMEIRO DESAFIO</span><h3>${escapeHtml(track.name)}</h3><ol>${track.steps.map(step => `<li>${escapeHtml(step)}</li>`).join("")}</ol></article>`).join("")}</div>
+<div class="cards">${studyTracks.map(track => `<article class="card"><span>SEU PRIMEIRO DESAFIO</span><h3>${escapeHtml(track.name)}</h3><ol>${track.steps.map(step => `<li>${escapeHtml(step)}</li>`).join("")}</ol></article>`).join("")}</div>
 </section>
 <section class="wrap section" id="faca-parte">
 <div class="eyebrow">07 / A PRÓXIMA CONEXÃO É COM VOCÊ</div>

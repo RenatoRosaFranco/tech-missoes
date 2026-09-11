@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     "engenharia de software",
     "inteligência artificial",
     "robótica",
+    "DevOps",
+    "automação",
+    "empreendedorismo",
     "estudo de programação",
   ],
   alternates: {

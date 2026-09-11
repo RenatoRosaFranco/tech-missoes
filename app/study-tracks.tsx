@@ -8,7 +8,16 @@ function Arrow() {
 }
 
 function TrackIcon({ kind }: { kind: string }) {
-  return <svg width="42" height="42" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">{kind === "code" ? <><path d="m15 13-11 11 11 11m18-22 11 11-11 11M28 7l-8 34" /></> : kind === "ai" ? <><path d="m24 5 17 10v19L24 44 7 34V15zM7 15l17 10 17-10M24 25v19M24 5v11M7 34l10-6m24 6-10-6" /><circle cx="24" cy="24" r="7" /></> : <><rect x="8" y="14" width="32" height="27" rx="3" /><path d="M24 14V7M3 23v10m42-10v10M17 33h14" /><circle cx="24" cy="5" r="2" /><circle cx="17" cy="24" r="2" /><circle cx="31" cy="24" r="2" /></>}</svg>;
+  return (
+    <svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      {kind === "code" ? <><path d="m15 13-11 11 11 11m18-22 11 11-11 11M28 7l-8 34" /></> : null}
+      {kind === "ai" ? <><path d="m24 5 17 10v19L24 44 7 34V15zM7 15l17 10 17-10M24 25v19M24 5v11M7 34l10-6m24 6-10-6" /><circle cx="24" cy="24" r="7" /></> : null}
+      {kind === "robot" ? <><rect x="8" y="14" width="32" height="27" rx="3" /><path d="M24 14V7M3 23v10m42-10v10M17 33h14" /><circle cx="24" cy="5" r="2" /><circle cx="17" cy="24" r="2" /><circle cx="31" cy="24" r="2" /></> : null}
+      {kind === "devops" ? <path d="M24 24c-4-5.3-8-8-12-8a8 8 0 1 0 0 16c4 0 8-2.7 12-8s8-8 12-8a8 8 0 0 1 0 16c-4 0-8-2.7-12-8" /> : null}
+      {kind === "automation" ? <><rect x="7" y="8" width="14" height="10" rx="2" /><rect x="27" y="8" width="14" height="10" rx="2" /><rect x="17" y="30" width="14" height="10" rx="2" /><path d="M14 18v4c0 4 4 8 10 8M34 18v4c0 4-4 8-10 8" /></> : null}
+      {kind === "venture" ? <><path d="M8 38V16l12 8V10l16 8" /><path d="M8 38h32M16 38V28h8v10" /></> : null}
+    </svg>
+  );
 }
 
 export function TrackCards() {

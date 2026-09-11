@@ -4,7 +4,7 @@ export const siteName = "Tech Missões";
 export const siteTagline = "Juntos, construímos o futuro.";
 export const siteTitle = "Tech Missões | Comunidade de tecnologia em Cerro Largo, RS";
 export const siteDescription =
-  "Comunidade de estudo e desenvolvimento em Cerro Largo, na região das Missões (RS). Engenharia de software, inteligência artificial e robótica, na prática e em comunidade.";
+  "Comunidade de estudo e desenvolvimento em Cerro Largo, na região das Missões (RS). Software, inteligência artificial, robótica, DevOps, automação e empreendedorismo, na prática e em comunidade.";
 
 export const sitePlace = {
   locality: "Cerro Largo",
