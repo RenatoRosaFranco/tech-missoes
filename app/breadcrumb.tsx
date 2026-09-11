@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { showPartnersSection } from "./community-links";
 
 const sections = [
   { id: "inicio", label: "Início" },
   { id: "areas", label: "Áreas de estudo" },
   { id: "tecnologias", label: "Tecnologias e ferramentas" },
   { id: "comunidade", label: "A comunidade" },
+  ...(showPartnersSection ? [{ id: "parceiras", label: "Instituições parceiras" }] : []),
   { id: "como-funciona", label: "Como funciona" },
   { id: "participe", label: "Trilhas de estudo" },
   { id: "faca-parte", label: "Faça parte da comunidade" },

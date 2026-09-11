@@ -1,12 +1,48 @@
 "use client";
 
-import { FormEvent, useEffect, useId, useRef, useState } from "react";
+import { FormEvent, type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { suggestedQuestions, welcomeMessage } from "@/lib/community-knowledge";
 
 type Message = {
   role: "user" | "assistant";
   content: string;
 };
+
+const inlinePattern = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|(https?:\/\/[^\s<]+)|\*\*([^*]+)\*\*/g;
+
+function shortLinkLabel(href: string) {
+  try {
+    const host = new URL(href).hostname.replace(/^www\./, "");
+    if (host === "chat.whatsapp.com") return "grupo do WhatsApp";
+    return host;
+  } catch {
+    return "abrir link";
+  }
+}
+
+function ChatText({ text }: { text: string }) {
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+  let key = 0;
+  for (const match of text.matchAll(inlinePattern)) {
+    const index = match.index ?? 0;
+    if (index > lastIndex) nodes.push(text.slice(lastIndex, index));
+    if (match[4]) {
+      nodes.push(<strong key={key++}>{match[4]}</strong>);
+    } else {
+      const href = match[2] ?? match[3] ?? "";
+      const label = match[1] ?? shortLinkLabel(href);
+      nodes.push(
+        <a key={key++} href={href} target="_blank" rel="noopener noreferrer">
+          {label}
+        </a>,
+      );
+    }
+    lastIndex = index + match[0].length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
 
 function Mark() {
   return <svg viewBox="0 0 46 42" fill="currentColor" aria-hidden="true"><path d="M0 0h27v8h-9v34H9V8H0zM23 13h8v29h-8zM35 0h9v42h-9z" /></svg>;
@@ -78,7 +114,7 @@ export function CommunityChat() {
           </header>
           <div className="chat-log" ref={listRef} aria-live="polite" aria-relevant="additions">
             {messages.map((message, index) => (
-              <p className={`chat-bubble chat-${message.role}`} key={`${message.role}-${index}`}>{message.content}</p>
+              <p className={`chat-bubble chat-${message.role}`} key={`${message.role}-${index}`}><ChatText text={message.content} /></p>
             ))}
             {pending && <p className="chat-bubble chat-assistant chat-pending" aria-label="O guia está respondendo"><span /><span /><span /></p>}
             {messages.length === 1 && !pending && (

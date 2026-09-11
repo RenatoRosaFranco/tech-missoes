@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { showPartnersSection } from "./community-links";
 import { ThemeToggle } from "./theme-toggle";
 
 function Mark() {
@@ -10,6 +11,7 @@ function Mark() {
 const links = [
   { href: "#comunidade", label: "A comunidade" },
   { href: "#areas", label: "Áreas de estudo" },
+  ...(showPartnersSection ? [{ href: "#parceiras", label: "Parceiras" }] : []),
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#starter-kit", label: "Nosso kit" },
 ];

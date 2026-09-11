@@ -1,4 +1,4 @@
-import { communityLinks, starterKit } from "@/app/community-links";
+import { communityLinks, showPartnersSection, starterKit } from "@/app/community-links";
 
 export type KnowledgeDoc = {
   id: string;
@@ -8,16 +8,10 @@ export type KnowledgeDoc = {
   related?: string[];
 };
 
-function joinLink(url: string, label: string, pending: string) {
-  return url ? `${label}: ${url}` : pending;
-}
-
 export function communityKnowledge(): KnowledgeDoc[] {
-  const whatsapp = joinLink(
-    communityLinks.whatsapp,
-    "O convite oficial está neste link",
-    "O convite para o grupo do WhatsApp ainda não foi publicado no site. Quando estiver pronto, o botão em Faça parte da comunidade leva direto para o grupo.",
-  );
+  const whatsapp = communityLinks.whatsapp
+    ? `O convite oficial está neste [grupo do WhatsApp](${communityLinks.whatsapp}).`
+    : "O convite para o grupo do WhatsApp ainda não foi publicado no site. Quando estiver pronto, o botão em Faça parte da comunidade leva direto para o grupo.";
   const socials = [
     ["Facebook", communityLinks.facebook],
     ["Instagram", communityLinks.instagram],
@@ -37,7 +31,7 @@ export function communityKnowledge(): KnowledgeDoc[] {
       id: "identidade",
       title: "O que é a Tech Missões",
       keywords: ["tech missoes", "quem sao", "o que e", "comunidade", "sobre", "apresentacao", "voces"],
-      answer: "Somos a Tech Missões: uma comunidade de estudo e desenvolvimento que nasceu em Cerro Largo, na região das Missões, no Rio Grande do Sul. Conectamos pessoas para aprender, criar e transformar a região por meio da tecnologia. O convite é simples: juntos, construímos o futuro.",
+      answer: "Somos a Tech Missões: uma comunidade de estudo e desenvolvimento que nasceu em Cerro Largo, na região das Missões. Conectamos pessoas para aprender, criar e transformar a região por meio da tecnologia.",
       related: ["essencia", "local", "participar"],
     },
     {
@@ -51,7 +45,7 @@ export function communityKnowledge(): KnowledgeDoc[] {
       id: "local",
       title: "Onde estamos",
       keywords: ["onde", "local", "cidade", "cerro largo", "missoes", "rio grande do sul", "rs", "brasil", "territorio", "regiao", "endereco"],
-      answer: "A Tech Missões nasce em Cerro Largo, na região das Missões, Rio Grande do Sul, Brasil. O território aparece no site com as coordenadas 28°08′ S / 54°44′ W. De Cerro Largo para todas as possibilidades: raízes locais, conexões sem limites.",
+      answer: "A Tech Missões nasce em Cerro Largo, na região das Missões, Rio Grande do Sul. Raízes locais, conexões sem limites.",
       related: ["identidade", "participar"],
     },
     {
@@ -65,7 +59,7 @@ export function communityKnowledge(): KnowledgeDoc[] {
       id: "areas",
       title: "Áreas de estudo",
       keywords: ["area", "trilha", "caminho", "estudo", "o que estudam", "eixos", "cursos"],
-      answer: "Há três caminhos, com infinitas conexões: engenharia de software, inteligência artificial e robótica. Exploramos as tecnologias que movem o mundo com fundamentos sólidos e mãos na massa. Curiosidade é o único pré-requisito.",
+      answer: "Há três áreas de estudo: **engenharia de software**, **inteligência artificial** e **robótica**. Cada uma com fundamentos sólidos e prática.",
       related: ["software", "inteligencia", "robotica", "tecnologias"],
     },
     {
@@ -88,6 +82,15 @@ export function communityKnowledge(): KnowledgeDoc[] {
       keywords: ["robotica", "robo", "eletronica", "automacao", "prototipo", "sensor", "arduino", "raspberry", "circuito"],
       answer: "A trilha de robótica é sobre ideias que ganham movimento: conectar programação, eletrônica e criatividade para interagir com o mundo real. Os temas passam por eletrônica, automação e prototipagem. Um primeiro caminho: conhecer circuitos, sensores e microcontroladores em um simulador, programar um protótipo que responda a um sensor e registrar o circuito e o código para outras pessoas reproduzirem.",
       related: ["areas", "tecnologias", "como-comecar"],
+    },
+    {
+      id: "parceiras",
+      title: "Instituições parceiras",
+      keywords: ["universidade", "parceira", "uffs", "uri", "unijui", "setrem", "iffar", "unipampa", "fasa", "uergs", "ufsm", "unicruz", "campus", "faculdade", "instituto"],
+      answer: showPartnersSection
+        ? "A Tech Missões caminha com instituições de ensino da Rota das Missões e do noroeste: UFFS, campus Cerro Largo; URI, em Santo Ângelo, São Luiz Gonzaga e Cerro Largo; UNIJUÍ; SETREM, em Três de Maio; IFFar; UNIPAMPA; FASA, em Santo Ângelo; UERGS, unidade de São Luiz Gonzaga; UFSM, campus Palmeira das Missões; e UNICRUZ, em Cruz Alta. No site, a seção Instituições parceiras reúne esses nomes e os endereços oficiais de cada uma."
+        : "As parcerias com universidades e institutos da região ainda estão sendo fechadas. Quando estiverem confirmadas, a seção Instituições parceiras entra no site.",
+      related: ["local", "participar", "areas"],
     },
     {
       id: "como-funciona",

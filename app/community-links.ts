@@ -13,6 +13,9 @@ export const communityLinks: {
   tiktok: "",
 };
 
+// Ligue de novo quando as parcerias com as instituições estiverem fechadas.
+export const showPartnersSection = false;
+
 // Configure o preço de exibição e o checkout ou contato oficial de vendas.
 export const starterKit = {
   price: "",

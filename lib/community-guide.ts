@@ -70,20 +70,15 @@ function retrieve(query: string, history: ChatTurn[]) {
   const ranked = docs
     .map(doc => ({ doc, score: scoreDoc(doc, `${expanded} ${prior}`, tokenize(`${expanded} ${prior}`)) }))
     .sort((left, right) => right.score - left.score);
-  const best = ranked.filter(item => item.score >= 4).slice(0, 2);
-  return best.map(item => item.doc);
+  const best = ranked.filter(item => item.score >= 4)[0];
+  return best ? [best.doc] : [];
 }
 
-function compose(docs: KnowledgeDoc[], query: string) {
+function compose(docs: KnowledgeDoc[]) {
   if (docs.length === 0) {
     return "Consigo responder o que está na comunidade Tech Missões: quem somos, onde nascemos, as três áreas de estudo, como participar, as tecnologias e o kit. Reformule com um desses assuntos, ou percorra o site — a conversa da comunidade também começa na seção Faça parte.";
   }
-  if (docs.length === 1 || docs[0].id === docs[1]?.id) return docs[0].answer;
-  const folded = fold(query);
-  if (folded.includes("area") || folded.includes("trilha") || folded.includes("estud")) {
-    return docs.map(doc => doc.answer).join(" ");
-  }
-  return `${docs[0].answer} ${docs[1].answer}`;
+  return docs[0].answer;
 }
 
 export function answerFromKnowledge(messages: ChatTurn[]) {
@@ -97,14 +92,18 @@ export function answerFromKnowledge(messages: ChatTurn[]) {
   if (thanks.test(folded)) {
     return "Que bom. Se quiser, posso falar de outra área, de como entrar no grupo ou do kit da comunidade.";
   }
-  return compose(retrieve(query, messages), query);
+  return compose(retrieve(query, messages));
 }
 
 export function systemPrompt() {
   return `Você é o guia da comunidade Tech Missões, em Cerro Largo, na região das Missões, RS.
-Responda em português brasileiro, com tom próximo, claro e fiel ao site. Frases curtas. Sem emojis.
-Use somente os fatos abaixo. Se a pergunta sair desse conteúdo, diga o que você cobre e convide a pessoa a reformular.
+Responda em português brasileiro, com tom próximo, claro e fiel ao site. No máximo três frases. Sem emojis.
+Use somente os fatos abaixo. Responda só o que foi perguntado, sem juntar assuntos vizinhos.
+Se a pergunta sair desse conteúdo, diga o que você cobre e convide a pessoa a reformular.
 Não invente eventos, preços, links, nomes de pessoas, parcerias ou datas que não estejam no material.
+Não cite coordenadas geográficas.
+Quando citar um endereço, use markdown [texto curto](url). Nunca cole a URL completa no meio da frase.
+Ao nomear as áreas de estudo, escreva **engenharia de software**, **inteligência artificial** e **robótica**.
 
 ${knowledgePrompt()}`;
 }

@@ -26,7 +26,7 @@ export function PageMotion() {
           animation.onfinish = () => animations.delete(animation);
         });
       }, { threshold: 0.08 });
-      document.querySelectorAll(".hero-copy, .hero .mission-art, .section-heading, .track-card, .community-inner > div, .how-grid > div, .join-copy, .track-selector, .membership > div, .kit-heading, .kit-product, .kit-order, .tech-universe, .tech-detail").forEach(element => observer?.observe(element));
+      document.querySelectorAll(".hero-copy, .hero .mission-art, .section-heading, .track-card, .community-inner > div, .partners-box, .how-grid > div, .join-copy, .track-selector, .membership > div, .kit-heading, .kit-product, .kit-order, .tech-universe, .tech-detail").forEach(element => observer?.observe(element));
     }
 
     setup();
