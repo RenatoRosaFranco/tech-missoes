@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { starterKit } from "./community-links";
+import { TypedLine } from "./typed-line";
+
+const kitTyped = ["O kit da comunidade.", "Leve a marca com você.", "Três itens. Uma identidade."];
 
 function ProductArt({ product }: { product: "mousepad" | "shirt" | "cup" }) {
   return <div className={`kit-art kit-art-${product}`}>
@@ -10,7 +13,7 @@ function ProductArt({ product }: { product: "mousepad" | "shirt" | "cup" }) {
 export function StarterKit() {
   return <section className="starter-kit" id="starter-kit" aria-labelledby="kit-title">
     <div className="container">
-      <div className="section-heading kit-heading"><div><span className="eyebrow">07 / LEVE A COMUNIDADE COM VOCÊ</span><h2 id="kit-title">Seu próximo capítulo.<br /><em>O kit da comunidade.</em></h2></div><p>Na mesa de estudos, nas novas ideias e no dia a dia.<br />Três itens para quem aprende e constrói em comunidade.</p></div>
+      <div className="section-heading kit-heading"><div><span className="eyebrow">07 / LEVE A COMUNIDADE COM VOCÊ</span><h2 id="kit-title">Seu próximo capítulo.<br /><em><TypedLine inView strings={kitTyped} /></em></h2></div><p>Na mesa de estudos, nas novas ideias e no dia a dia.<br />Três itens para quem aprende e constrói em comunidade.</p></div>
       <div className="kit-products">
         {[{ type: "mousepad" as const, number: "01", title: "Mousepad com guia de consulta", text: "Seu espaço de trabalho com referências de programação sempre à mão." }, { type: "shirt" as const, number: "02", title: "Camiseta da comunidade", text: "Vista a Tech Missões e leve o espírito da comunidade para onde você for." }, { type: "cup" as const, number: "03", title: "Copo personalizado", text: "Uma companhia para as pausas, as conversas e as próximas linhas de código." }].map(product => <article className="kit-product" key={product.type}><ProductArt product={product.type} /><div className="kit-product-copy"><span className="eyebrow">{product.number} / NO SEU KIT</span><h3>{product.title}</h3><p>{product.text}</p></div></article>)}
       </div>

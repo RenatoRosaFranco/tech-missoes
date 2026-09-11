@@ -2,6 +2,10 @@
 
 import { useState, type CSSProperties } from "react";
 import { DeveloperIllustration } from "./developer-illustration";
+import { TechDotField } from "./tech-dot-field";
+import { TypedLine } from "./typed-line";
+
+const aroundTyped = ["Possibilidades ao redor.", "Ferramentas ao redor.", "Pessoas ao redor."];
 
 const technologies = [
   { name: "TypeScript", context: "Código com tipagem", icon: "typescript", area: "Software", description: "Tipos e ferramentas para escrever código mais claro e manter aplicações com confiança." },
@@ -25,8 +29,10 @@ export function Technologies() {
   const [orbitPaused, setOrbitPaused] = useState(false);
   const technology = technologies[selected];
 
-  return <section className="technologies section container" id="tecnologias" aria-labelledby="technologies-title">
-    <div className="section-heading"><div><span className="eyebrow">02 / TECNOLOGIAS E FERRAMENTAS</span><h2 id="technologies-title">Você no centro.<br /><em>Possibilidades ao redor.</em></h2></div><p>Da primeira linha de código ao próximo protótipo.<br />Explore as ferramentas que conectam nossas áreas de estudo.</p></div>
+  return <section className="technologies section" id="tecnologias" aria-labelledby="technologies-title">
+    <TechDotField />
+    <div className="container">
+    <div className="section-heading"><div><span className="eyebrow">02 / TECNOLOGIAS E FERRAMENTAS</span><h2 id="technologies-title">Você no centro.<br /><em><TypedLine inView strings={aroundTyped} /></em></h2></div><p>Da primeira linha de código ao próximo protótipo.<br />Explore as ferramentas que conectam nossas áreas de estudo.</p></div>
     <div className="tech-universe" data-orbit-paused={orbitPaused}>
       <div className="tech-rotor">
       <div className="tech-orbit tech-orbit-outer" aria-hidden="true" /><div className="tech-orbit tech-orbit-inner" aria-hidden="true" />
@@ -46,5 +52,6 @@ export function Technologies() {
     </div>
     <div className="orbit-controls"><button type="button" className="orbit-toggle" onClick={() => setOrbitPaused(paused => !paused)} aria-pressed={orbitPaused}><span aria-hidden="true">{orbitPaused ? "▷" : "Ⅱ"}</span>{orbitPaused ? "Retomar rotação" : "Pausar rotação"}</button></div>
     <div className="tech-detail" id="technology-detail" aria-live="polite" aria-atomic="true"><div><span className="eyebrow">{technology.area}</span><h3>{technology.name}</h3></div><p>{technology.description}</p><div className="tech-context"><span className="eyebrow">NA PRÁTICA</span><span>{technology.context}</span></div></div>
+    </div>
   </section>;
 }

@@ -72,7 +72,9 @@ export function CommunityChat() {
         <section className="chat-panel" id={panelId} role="dialog" aria-modal="false" aria-labelledby="chat-title">
           <header className="chat-head">
             <div className="chat-brand"><Mark /><div><span className="chat-kicker">POSTO TM · 001</span><strong id="chat-title">Guia da comunidade</strong></div></div>
-            <button type="button" className="chat-close" onClick={() => setOpen(false)} aria-label="Fechar conversa">Fechar −</button>
+            <button type="button" className="chat-close" onClick={() => setOpen(false)} aria-label="Fechar conversa">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
           </header>
           <div className="chat-log" ref={listRef} aria-live="polite" aria-relevant="additions">
             {messages.map((message, index) => (
