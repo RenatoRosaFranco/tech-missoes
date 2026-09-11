@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "./google-analytics";
 import { JsonLd } from "./json-ld";
-import { getSiteUrl, googleSiteVerification, siteDescription, siteName, sitePlace, siteTitle } from "@/lib/site";
+import { getSiteUrl, googleAnalyticsId, googleSiteVerification, siteDescription, siteName, sitePlace, siteTitle } from "@/lib/site";
 import "./globals.css";
 
 const siteUrl = getSiteUrl();
 const googleVerification = googleSiteVerification();
+const gaId = googleAnalyticsId();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -89,6 +90,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" dir="ltr" suppressHydrationWarning>
       <head>
         <link rel="sitemap" type="application/xml" title="Sitemap" href={`${siteUrl}/sitemap.xml`} />
+        {gaId ? (
+          <>
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+            <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          </>
+        ) : null}
         <JsonLd />
       </head>
       <body>
