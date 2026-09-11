@@ -12,9 +12,10 @@ type TypedLineProps = {
 
 export function TypedLine({ strings, className, loop = true, typeSpeed = 48, inView = false }: TypedLineProps) {
   const root = useRef<HTMLSpanElement>(null);
-  const host = useRef<HTMLSpanElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [visible, setVisible] = useState(!inView);
+  const [text, setText] = useState(strings[0] ?? "");
+  const [cursor, setCursor] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -36,41 +37,59 @@ export function TypedLine({ strings, className, loop = true, typeSpeed = 48, inV
   }, [inView]);
 
   useEffect(() => {
-    const element = host.current;
-    if (!element) return;
-
     if (reduceMotion || !visible) {
-      element.textContent = strings[0];
+      setText(strings[0] ?? "");
+      setCursor(false);
       return;
     }
 
-    element.textContent = "";
     let cancelled = false;
-    let typed: { destroy: () => void } | undefined;
+    let timeout = 0;
+    let stringIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+    setText("");
+    setCursor(true);
 
-    import("typed.js").then(({ default: Typed }) => {
-      if (cancelled || !element.isConnected) return;
-      typed = new Typed(element, {
-        strings,
-        typeSpeed,
-        backSpeed: 26,
-        backDelay: 1600,
-        startDelay: 200,
-        smartBackspace: true,
-        loop,
-        showCursor: true,
-        cursorChar: "|",
-        onComplete(self) {
-          if (!loop) self.cursor?.remove();
-        },
-      });
-    }).catch(() => {
-      element.textContent = strings[0];
+    const wait = (ms: number) => new Promise<void>(resolve => {
+      timeout = window.setTimeout(resolve, ms);
     });
 
+    async function run() {
+      await wait(200);
+      while (!cancelled) {
+        const current = strings[stringIndex] ?? "";
+        if (!deleting) {
+          charIndex += 1;
+          setText(current.slice(0, charIndex));
+          if (charIndex >= current.length) {
+            if (!loop) {
+              setCursor(false);
+              return;
+            }
+            await wait(1600);
+            if (cancelled) return;
+            deleting = true;
+            continue;
+          }
+          await wait(typeSpeed);
+        } else {
+          charIndex -= 1;
+          setText(current.slice(0, Math.max(charIndex, 0)));
+          if (charIndex <= 0) {
+            deleting = false;
+            stringIndex = (stringIndex + 1) % strings.length;
+            charIndex = 0;
+          }
+          await wait(26);
+        }
+      }
+    }
+
+    void run();
     return () => {
       cancelled = true;
-      typed?.destroy();
+      window.clearTimeout(timeout);
     };
   }, [loop, reduceMotion, strings, typeSpeed, visible]);
 
@@ -81,7 +100,10 @@ export function TypedLine({ strings, className, loop = true, typeSpeed = 48, inV
     <span ref={root} className={className ? `typed-line ${className}` : "typed-line"}>
       {hideLive ? <span className="sr-only">{strings[0]}</span> : null}
       <span className="typed-sizer" aria-hidden="true">{longest}</span>
-      <span className="typed-live" aria-hidden={hideLive || undefined}><span ref={host}>{strings[0]}</span></span>
+      <span className="typed-live" aria-hidden={hideLive || undefined}>
+        {text}
+        {cursor ? <span className="typed-cursor typed-cursor--blink" aria-hidden="true">|</span> : null}
+      </span>
     </span>
   );
 }

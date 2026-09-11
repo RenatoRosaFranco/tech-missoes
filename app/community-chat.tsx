@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, type ReactNode, useEffect, useId, useRef, useState } from "react";
-import { suggestedQuestions, welcomeMessage } from "@/lib/community-knowledge";
+import { suggestedQuestions, welcomeMessage } from "@/lib/community-copy";
 
 type Message = {
   role: "user" | "assistant";
