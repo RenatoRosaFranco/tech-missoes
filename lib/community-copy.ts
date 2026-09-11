@@ -6,4 +6,4 @@ export const suggestedQuestions = [
 ];
 
 export const welcomeMessage =
-  "Olá. Sou o guia da Tech Missões. Posso falar sobre a comunidade, as áreas de estudo, como participar e o kit. O que você quer saber?";
+  "Olá. Sou o guia da Tech Missões. Posso falar sobre a comunidade, as áreas de estudo, os eventos, como participar e o kit. O que você quer saber?";

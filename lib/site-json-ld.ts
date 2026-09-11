@@ -6,6 +6,7 @@ const faqQuestions: Record<string, string> = {
   identidade: "O que é a Tech Missões?",
   participar: "Como faço parte?",
   areas: "Quais são as áreas de estudo?",
+  eventos: "Tem eventos?",
   kit: "Tem kit da comunidade?",
 };
 
@@ -79,6 +80,16 @@ export function siteJsonLd() {
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
         primaryImageOfPage: `${siteUrl}/opengraph-image`,
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/eventos`,
+        url: `${siteUrl}/eventos`,
+        name: "Eventos",
+        description: "Agenda da Tech Missões em Cerro Largo e na região das Missões: grupos de estudo, encontros e apresentações da comunidade.",
+        inLanguage: "pt-BR",
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
       },
       {
         "@type": "ItemList",

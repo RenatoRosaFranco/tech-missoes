@@ -162,6 +162,13 @@ export function communityKnowledge(): KnowledgeDoc[] {
       answer: `As redes oficiais da Tech Missões no rodapé do site são Facebook, Instagram, YouTube e TikTok. ${socialLines}`,
       related: ["participar", "identidade"],
     },
+    {
+      id: "eventos",
+      title: "Eventos",
+      keywords: ["evento", "eventos", "agenda", "encontro", "encontros", "calendario", "palestra", "workshop", "data"],
+      answer: `A página de eventos da Tech Missões ainda não tem nenhum encontro publicado. Quando a comunidade marcar grupos de estudo, conversas ou apresentações, eles aparecem em Eventos. Enquanto a agenda está em branco, a conversa continua no WhatsApp. ${whatsapp}`,
+      related: ["participar", "como-funciona"],
+    },
   ];
 }
 

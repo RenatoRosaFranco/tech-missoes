@@ -79,7 +79,7 @@ function retrieve(query: string, history: ChatTurn[]) {
 
 function compose(docs: KnowledgeDoc[]) {
   if (docs.length === 0) {
-    return "Consigo responder o que está na comunidade Tech Missões: quem somos, onde nascemos, as áreas de estudo, como participar, as tecnologias e o kit. Reformule com um desses assuntos, ou percorra o site — a conversa da comunidade também começa na seção Faça parte.";
+    return "Consigo responder o que está na comunidade Tech Missões: quem somos, onde nascemos, as áreas de estudo, os eventos, como participar, as tecnologias e o kit. Reformule com um desses assuntos, ou percorra o site — a conversa da comunidade também começa na seção Faça parte.";
   }
   return docs[0].answer;
 }
@@ -90,7 +90,7 @@ export function answerFromKnowledge(messages: ChatTurn[]) {
   const query = latest.content.trim();
   const folded = fold(query);
   if (greetings.test(folded)) {
-    return "Olá. Sou o guia da Tech Missões. Pergunte sobre a comunidade, as áreas de estudo, como participar ou o kit.";
+    return "Olá. Sou o guia da Tech Missões. Pergunte sobre a comunidade, as áreas de estudo, os eventos, como participar ou o kit.";
   }
   if (thanks.test(folded)) {
     return "Que bom. Se quiser, posso falar de outra área, de como entrar no grupo ou do kit da comunidade.";

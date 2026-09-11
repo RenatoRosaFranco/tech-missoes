@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     "DevOps",
     "automação",
     "empreendedorismo",
+    "eventos",
     "estudo de programação",
   ],
   alternates: {

@@ -124,11 +124,12 @@ export function renderAmpPage() {
   const nav = [
     ["#comunidade", "A comunidade"],
     ["#areas", "Áreas de estudo"],
+    ["/eventos", "Eventos"],
     ["#como-funciona", "Como funciona"],
     ["#starter-kit", "Nosso kit"],
     ["/entrar", "Entrar"],
   ]
-    .map(([href, label]) => `<a href="${escapeHtml(href === "/entrar" ? `${siteUrl}/entrar` : href)}">${escapeHtml(label)}</a>`)
+    .map(([href, label]) => `<a href="${escapeHtml(href.startsWith("/") ? `${siteUrl}${href}` : href)}">${escapeHtml(label)}</a>`)
     .join("");
 
   return `<!doctype html>

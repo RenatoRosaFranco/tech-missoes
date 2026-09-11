@@ -17,5 +17,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       images: sitemapImages(siteUrl),
     },
+    {
+      url: `${siteUrl}/eventos`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          "pt-BR": `${siteUrl}/eventos`,
+          "x-default": `${siteUrl}/eventos`,
+        },
+      },
+    },
   ];
 }
