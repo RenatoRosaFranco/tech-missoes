@@ -7,6 +7,15 @@ import { Technologies } from "./technologies";
 import { StarterKit } from "./starter-kit";
 import { ThemeToggle } from "./theme-toggle";
 import { communityLinks } from "./community-links";
+import { MissionArt } from "./mission-art";
+import { TypedLine } from "./typed-line";
+
+const heroTyped = ["o futuro.", "software.", "inteligência.", "robótica.", "comunidade."];
+const locationTyped = [
+  "CONHECIMENTO QUE CONECTA. TECNOLOGIA QUE TRANSFORMA.",
+  "APRENDER COM PROFUNDIDADE. CONSTRUIR NA PRÁTICA.",
+  "RAÍZES LOCAIS. CONEXÕES SEM LIMITES.",
+];
 
 const tracks = [
   { number: "01", name: "Engenharia de software", short: "Software", description: "Mais do que escrever código. Entender sistemas, compartilhar boas práticas e construir software que faz a diferença.", tags: "ARQUITETURA · OPEN SOURCE · DESENVOLVIMENTO", icon: "code", steps: ["Explore lógica de programação e controle de versão com Git.", "Construa uma aplicação para um problema da sua comunidade.", "Documente suas decisões e convide alguém para revisar o código."] },
@@ -43,38 +52,13 @@ function TrackIcon({ kind }: { kind: string }) {
   return <svg width="42" height="42" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">{kind === "code" ? <><path d="m15 13-11 11 11 11m18-22 11 11-11 11M28 7l-8 34" /></> : kind === "ai" ? <><path d="m24 5 17 10v19L24 44 7 34V15zM7 15l17 10 17-10M24 25v19M24 5v11M7 34l10-6m24 6-10-6" /><circle cx="24" cy="24" r="7" /></> : <><rect x="8" y="14" width="32" height="27" rx="3" /><path d="M24 14V7M3 23v10m42-10v10M17 33h14" /><circle cx="24" cy="5" r="2" /><circle cx="17" cy="24" r="2" /><circle cx="31" cy="24" r="2" /></>}</svg>;
 }
 
-function MissionArt() {
-  return <div className="mission-art" aria-label="Ilustração arquitetônica abstrata de um arco missioneiro conectado a circuitos" role="img">
-    <div className="art-label"><span>RAÍZES LOCAIS.</span><span>CONEXÕES SEM LIMITES.</span></div>
-    <svg viewBox="0 0 600 590" fill="none" aria-hidden="true">
-      <defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0v30" stroke="#fff" strokeOpacity=".09" strokeWidth=".6" /></pattern><pattern id="lines" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 0v7" stroke="#f0b8ac" strokeOpacity=".5" strokeWidth="1" /></pattern></defs>
-      <path fill="url(#grid)" d="M0 0h600v590H0z" />
-      <circle cx="308" cy="298" r="210" stroke="#e3a293" strokeOpacity=".3" />
-      <circle cx="308" cy="298" r="165" stroke="#e3a293" strokeOpacity=".2" strokeDasharray="3 7" />
-      <path d="M54 461h492M308 66v444M62 298h488" stroke="#e4a598" strokeOpacity=".3" strokeDasharray="5 6" />
-      <path d="m135 442 66-38V239c0-76 48-126 112-126 23 0 44 6 61 17-31-28-64-42-101-30-83 17-138 75-138 160z" fill="#721b24" stroke="#efa797" />
-      <path d="M201 404V246c0-65 43-118 98-118s99 53 99 118v158h-62V250c0-33-17-60-37-60s-37 27-37 60v154z" fill="#e7b0a0" />
-      <path d="M201 404V246c0-65 43-118 98-118s99 53 99 118v158h-62V250c0-33-17-60-37-60s-37 27-37 60v154z" fill="url(#lines)" stroke="#ffd5bf" />
-      <path d="m398 404 51 30V257c0-58-21-108-64-132l-41-22c35 24 54 69 54 143z" fill="#741c26" stroke="#dc8e82" />
-      <path d="m262 404 34 20V252c0-24 6-40 16-47-4-9-9-15-13-15-20 0-37 27-37 60z" fill="#77222b" stroke="#e7ab99" />
-      <path d="m135 442 67 38 60-35v-41l-61 35v-35zM336 404v42l62 35 51-30v-17l-51 30z" fill="#cc796e" stroke="#f1b7a5" />
-      <path d="m201 439 61-35m136 60v-60M135 442l66 38v-41" stroke="#f9cab4" />
-      <g stroke="#e9ad9c" strokeWidth="1.3"><path d="M74 184h63l32 32M414 179l37-37h60M449 310h63l27 27v53M99 356h37M296 423v77h93l31 31h71M74 491h80l24-24" /><circle cx="70" cy="184" r="4" /><circle cx="515" cy="142" r="4" /><circle cx="539" cy="394" r="4" /><circle cx="95" cy="356" r="4" /><circle cx="495" cy="531" r="4" /><circle cx="70" cy="491" r="4" /></g>
-      <g fill="#f4c1ac"><path d="M87 104h12v2H87zM92 99h2v12h-2zM488 449h12v2h-12zM493 444h2v12h-2z" /><circle cx="461" cy="92" r="3" /></g>
-      <text x="55" y="551" fill="#efb6a8" fontSize="10" fontFamily="monospace" letterSpacing="2">28°08′ S / 54°44′ W</text>
-      <text x="476" y="551" fill="#efb6a8" fontSize="10" fontFamily="monospace">FIG. 001</text>
-    </svg>
-    <div className="art-caption"><span>DO NOSSO TERRITÓRIO PARA O FUTURO.</span><span>TM — RS</span></div>
-  </div>;
-}
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedTrack, setSelectedTrack] = useState(0);
   return <>
     <PageMotion />
     <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <div className="location-bar"><div className="container"><span><span className="location-dot" />CERRO LARGO, RS · REGIÃO DAS MISSÕES</span><span>CONHECIMENTO QUE CONECTA. TECNOLOGIA QUE TRANSFORMA.</span></div></div>
+    <div className="location-bar"><div className="container"><span><span className="location-dot" />CERRO LARGO, RS · REGIÃO DAS MISSÕES</span><span aria-hidden="true"><TypedLine strings={locationTyped} typeSpeed={28} /></span></div></div>
     <div className="site-header">
     <header className="header container">
       <a className="brand" href="#inicio" aria-label="Tech Missões, início"><Mark /><span>tech<span>missões<span className="brand-period">.</span></span></span></a>
@@ -88,7 +72,7 @@ export default function Home() {
     </div>
     <main id="conteudo">
       <section className="hero container" id="inicio">
-        <div className="hero-copy"><div className="eyebrow"><span className="red-line" /> UMA COMUNIDADE. MUITAS POSSIBILIDADES.</div><h1><span className="hero-title-line"><em>Juntos,</em> construímos</span><br />o futuro.</h1><p>Somos a Tech Missões. Uma comunidade de estudo e desenvolvimento que conecta pessoas para aprender, criar e transformar a nossa região por meio da tecnologia.</p><div className="hero-actions"><a className="button button-red" href="#faca-parte">Faça parte da comunidade <Arrow /></a><a className="text-link" href="#comunidade">Conheça a comunidade <span aria-hidden="true">↓</span></a></div><div className="hero-footnote"><span className="small-cross">+</span> De Cerro Largo para todas as possibilidades.</div></div>
+        <div className="hero-copy"><div className="eyebrow"><span className="red-line" /> UMA COMUNIDADE. MUITAS POSSIBILIDADES.</div><h1><span className="hero-title-line"><em>Juntos,</em> construímos</span><br /><span className="sr-only">o futuro.</span><span className="hero-typed" aria-hidden="true"><TypedLine strings={heroTyped} /></span></h1><p>Somos a Tech Missões. Uma comunidade de estudo e desenvolvimento que conecta pessoas para aprender, criar e transformar a nossa região por meio da tecnologia.</p><div className="hero-actions"><a className="button button-red" href="#faca-parte">Faça parte da comunidade <Arrow /></a><a className="text-link" href="#comunidade">Conheça a comunidade <span aria-hidden="true">↓</span></a></div><div className="hero-footnote"><span className="small-cross">+</span> De Cerro Largo para todas as possibilidades.</div></div>
         <MissionArt />
       </section>
       <div className="principles container"><span>MENTES CURIOSAS.<br /><strong>PROPÓSITO EM COMUM.</strong></span><p>Aprender com profundidade.</p><span className="principle-star">✳</span><p>Construir na prática.</p><span className="principle-star">✳</span><p>Evoluir em comunidade.</p></div>

@@ -1154,6 +1154,19 @@ h2 {
 .hero-title-line {
   white-space: nowrap;
 }
+.hero-typed {
+  display: inline-block;
+  min-width: 12ch;
+  white-space: nowrap;
+}
+.typed-cursor {
+  color: var(--red);
+  font-weight: 400;
+  margin-left: 2px;
+}
+.location-bar .typed-cursor {
+  font-size: 9px;
+}
 
 .technologies { border-top: 1px solid var(--border); }
 .technologies h2 em { font-family: Georgia, serif; font-weight: 400; color: var(--red); }

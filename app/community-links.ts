@@ -6,7 +6,7 @@ export const communityLinks: {
   youtube: string;
   tiktok: string;
 } = {
-  whatsapp: "",
+  whatsapp: "https://chat.whatsapp.com/DxL2QnSAtlSDZhg5dsngr6",
   facebook: "",
   instagram: "",
   youtube: "",
