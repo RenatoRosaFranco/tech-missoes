@@ -28,6 +28,14 @@ export function googleSiteVerification() {
   return process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() || undefined;
 }
 
+const googleAnalyticsIdPattern = /^(G|GT)-[A-Z0-9]+$/i;
+
+export function googleAnalyticsId() {
+  const id = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID?.trim();
+  if (!id || !googleAnalyticsIdPattern.test(id)) return undefined;
+  return id;
+}
+
 export function sitemapImages(siteUrl: string) {
   return [
     `${siteUrl}/opengraph-image`,

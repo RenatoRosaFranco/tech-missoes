@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "./google-analytics";
 import { JsonLd } from "./json-ld";
 import { getSiteUrl, googleSiteVerification, siteDescription, siteName, sitePlace, siteTitle } from "@/lib/site";
 import "./globals.css";
@@ -97,6 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         {children}
+        <GoogleAnalytics />
       </body>
     </html>
   );
