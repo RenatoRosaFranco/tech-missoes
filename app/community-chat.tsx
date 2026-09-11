@@ -48,10 +48,10 @@ function Mark() {
   return <svg viewBox="0 0 46 42" fill="currentColor" aria-hidden="true"><path d="M0 0h27v8h-9v34H9V8H0zM23 13h8v29h-8zM35 0h9v42h-9z" /></svg>;
 }
 
-export function CommunityChat() {
+export function CommunityChat({ startOpen = false }: { startOpen?: boolean } = {}) {
   const panelId = useId();
   const inputId = useId();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(startOpen);
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");

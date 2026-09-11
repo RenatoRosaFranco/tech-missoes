@@ -1347,6 +1347,7 @@ h2 .typed-cursor,
   isolation: isolate;
   border-top: 1px solid var(--border);
 }
+.tech-pending { min-height: 720px; }
 .technologies h2 em { font-family: Georgia, serif; font-weight: 400; color: var(--red); }
 .technologies::before {
   content: "";

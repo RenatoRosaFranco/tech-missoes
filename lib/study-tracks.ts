@@ -1,0 +1,7 @@
+export const studyTracks = [
+  { number: "01", name: "Engenharia de software", description: "Mais do que escrever código. Entender sistemas, compartilhar boas práticas e construir software que faz a diferença.", tags: "ARQUITETURA · OPEN SOURCE · DESENVOLVIMENTO", icon: "code", steps: ["Explore lógica de programação e controle de versão com Git.", "Construa uma aplicação para um problema da sua comunidade.", "Documente suas decisões e convide alguém para revisar o código."] },
+  { number: "02", name: "Inteligência artificial", description: "Da curiosidade à aplicação. Investigar dados, entender modelos e experimentar novas possibilidades com responsabilidade.", tags: "MACHINE LEARNING · DADOS · IA APLICADA", icon: "ai", steps: ["Pratique Python explorando pequenos conjuntos de dados.", "Experimente um modelo simples e compare seus resultados.", "Compartilhe o experimento, suas limitações e o que aprendeu."] },
+  { number: "03", name: "Robótica", description: "Ideias que ganham movimento. Conectar programação, eletrônica e criatividade para interagir com o mundo real.", tags: "ELETRÔNICA · AUTOMAÇÃO · PROTOTIPAGEM", icon: "robot", steps: ["Conheça circuitos, sensores e microcontroladores em um simulador.", "Programe um protótipo que responda a uma leitura de sensor.", "Registre o circuito e o código para que outras pessoas possam reproduzir o projeto."] },
+] as const;
+
+export const TRACK_EVENT = "tech-missoes:track";
