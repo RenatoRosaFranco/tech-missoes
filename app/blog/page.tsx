@@ -1,10 +1,16 @@
+/**
+ * Blog index route (`/blog`).
+ *
+ * @packageDocumentation
+ */
+
 import type { Metadata } from "next";
-import { BlogIndex } from "@/components/blog/blog-index";
-import { SitePage } from "@/components/layout/site-page";
-import { blogPosts, pageCopy } from "@/lib/app-config";
+import { Blog } from "@/ui/paginas/blog/blog";
+import { blogPage } from "@/ui/paginas/blog/posts";
 
-const page = pageCopy.blog;
+const page = blogPage;
 
+/** Listing metadata for the community notebook. */
 export const metadata: Metadata = {
   title: page.title,
   description: page.description,
@@ -13,21 +19,7 @@ export const metadata: Metadata = {
   twitter: { title: page.title, description: page.description },
 };
 
+/** Searchable list of published articles. */
 export default function Page() {
-  const [lead, rest] = page.lead.split("\n");
-
-  return (
-    <SitePage location={page.location} trail={{ current: page.title, href: "/blog" }} footerLine={page.footerLine}>
-      <section className="section container blog-page">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">{page.eyebrow}</span>
-            <h1>{page.heading}</h1>
-          </div>
-          <p>{lead}{rest ? <><br />{rest}</> : null}</p>
-        </div>
-        <BlogIndex posts={blogPosts} />
-      </section>
-    </SitePage>
-  );
+  return <Blog />;
 }

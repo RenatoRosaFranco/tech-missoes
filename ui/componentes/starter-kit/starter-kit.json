@@ -1,0 +1,46 @@
+{
+  "eyebrow": "08 / LEVE A COMUNIDADE COM VOCÊ",
+  "title": "Seu próximo capítulo.",
+  "lead": "Na mesa de estudos, nas novas ideias e no dia a dia.\nTrês itens para quem aprende e constrói em comunidade.",
+  "productEyebrow": "NO SEU KIT",
+  "orderEyebrow": "KIT DA COMUNIDADE",
+  "orderTitle": "Três itens. Uma identidade em comum.",
+  "orderLead": "Mousepad com guia de consulta, camiseta e copo personalizado.",
+  "disclaimer": "Ilustrações conceituais dos produtos. O visual final pode variar.",
+  "buy": "Comprar meu kit",
+  "soon": "Kit disponível em breve",
+  "availability": "As vendas ainda não começaram.",
+  "typed": [
+    "O kit da comunidade.",
+    "Leve a marca com você.",
+    "Três itens. Uma identidade."
+  ],
+  "price": "",
+  "purchaseUrl": "",
+  "products": [
+    {
+      "type": "mousepad",
+      "number": "01",
+      "title": "Mousepad com guia de consulta",
+      "text": "Seu espaço de trabalho com referências de programação sempre à mão.",
+      "src": "/illustrations/mousepad.png",
+      "alt": "Mousepad vermelho da Tech Missões com a marca da comunidade e um guia de consulta de programação e ferramentas."
+    },
+    {
+      "type": "shirt",
+      "number": "02",
+      "title": "Camiseta da comunidade",
+      "text": "Vista a Tech Missões e leve o espírito da comunidade para onde você for.",
+      "src": "/illustrations/camisa.png",
+      "alt": "Frente e costas da camiseta vermelha da Tech Missões, com a marca da comunidade e o slogan Juntos, construímos o futuro."
+    },
+    {
+      "type": "cup",
+      "number": "03",
+      "title": "Copo personalizado",
+      "text": "Uma companhia para as pausas, as conversas e as próximas linhas de código.",
+      "src": "/illustrations/copo.png",
+      "alt": "Duas vistas do copo vermelho personalizado da Tech Missões, com tampa, marca da comunidade e o slogan Juntos, construímos o futuro."
+    }
+  ]
+}

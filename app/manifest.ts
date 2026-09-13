@@ -1,6 +1,17 @@
+/**
+ * Web app manifest (`/manifest.webmanifest`).
+ *
+ * @packageDocumentation
+ */
+
 import type { MetadataRoute } from "next";
 import { siteDescription, siteName } from "@/lib/site";
 
+/**
+ * PWA identity, colors, and icons.
+ *
+ * @returns Manifest consumed by Next.js `MetadataRoute.Manifest`.
+ */
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteName,

@@ -1,0 +1,50 @@
+.typed-line {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+
+.typed-sizer {
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.typed-live {
+  position: absolute;
+  inset: 0 auto auto 0;
+  white-space: nowrap;
+}
+
+.footer .typed-sizer,
+.footer .typed-live,
+.membership-caption .typed-sizer,
+.membership-caption .typed-live {
+  white-space: normal;
+}
+
+.typed-cursor {
+  color: var(--red);
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.typed-cursor--blink {
+  animation: typed-cursor-blink .7s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typed-cursor--blink { animation: none; }
+}
+
+.location-bar .typed-cursor {
+  font-size: 9px;
+}
+
+h2 .typed-cursor,
+.principles .typed-cursor,
+.footer .typed-cursor,
+.membership-caption .typed-cursor,
+.join-note .typed-cursor {
+  font-weight: 400;
+}

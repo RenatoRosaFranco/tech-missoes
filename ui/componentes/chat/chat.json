@@ -1,0 +1,458 @@
+{
+  "welcome": "Olá. Sou o guia da Tech Missões. Posso falar sobre a comunidade, as áreas de estudo, os eventos, os hackatons, o blog, como participar e o kit. O que você quer saber?",
+  "greeting": "Olá. Sou o guia da Tech Missões. Pergunte sobre a comunidade, as áreas de estudo, os eventos, os hackatons, o blog, como participar ou o kit.",
+  "thanks": "Que bom. Se quiser, posso falar de outra área, de como entrar no grupo ou do kit da comunidade.",
+  "fallback": "Consigo responder o que está na comunidade Tech Missões: quem somos, onde nascemos, as áreas de estudo, os eventos, os hackatons, o blog, como participar, as tecnologias e o kit. Reformule com um desses assuntos, ou percorra o site — a conversa da comunidade também começa na seção Faça parte.",
+  "suggestedQuestions": [
+    "O que é a Tech Missões?",
+    "Como faço parte?",
+    "Quais são as áreas de estudo?",
+    "Tem kit da comunidade?"
+  ],
+  "topics": [
+    {
+      "id": "identidade",
+      "title": "O que é a Tech Missões",
+      "keywords": [
+        "tech missoes",
+        "quem sao",
+        "o que e",
+        "comunidade",
+        "sobre",
+        "apresentacao",
+        "voces"
+      ],
+      "related": [
+        "essencia",
+        "local",
+        "participar"
+      ]
+    },
+    {
+      "id": "essencia",
+      "title": "A essência da comunidade",
+      "keywords": [
+        "essencia",
+        "proposito",
+        "missao",
+        "por que",
+        "conviccao",
+        "raizes",
+        "futuro",
+        "grandes centros"
+      ],
+      "related": [
+        "principios",
+        "como-funciona"
+      ]
+    },
+    {
+      "id": "local",
+      "title": "Onde estamos",
+      "keywords": [
+        "onde",
+        "local",
+        "cidade",
+        "cerro largo",
+        "missoes",
+        "rio grande do sul",
+        "rs",
+        "brasil",
+        "territorio",
+        "regiao",
+        "endereco"
+      ],
+      "related": [
+        "identidade",
+        "participar"
+      ]
+    },
+    {
+      "id": "principios",
+      "title": "Princípios",
+      "keywords": [
+        "principio",
+        "valores",
+        "como pensam",
+        "aprender",
+        "construir",
+        "evoluir"
+      ],
+      "related": [
+        "como-funciona",
+        "essencia"
+      ]
+    },
+    {
+      "id": "areas",
+      "title": "Áreas de estudo",
+      "keywords": [
+        "area",
+        "trilha",
+        "caminho",
+        "estudo",
+        "o que estudam",
+        "eixos",
+        "cursos"
+      ],
+      "related": [
+        "software",
+        "inteligencia",
+        "robotica",
+        "devops",
+        "automacao",
+        "empreendedorismo",
+        "tecnologias"
+      ]
+    },
+    {
+      "id": "software",
+      "title": "Engenharia de software",
+      "keywords": [
+        "software",
+        "programacao",
+        "codigo",
+        "desenvolvimento",
+        "arquitetura",
+        "open source",
+        "engenharia"
+      ],
+      "related": [
+        "areas",
+        "tecnologias",
+        "como-comecar"
+      ]
+    },
+    {
+      "id": "inteligencia",
+      "title": "Inteligência artificial",
+      "keywords": [
+        "inteligencia artificial",
+        "ia",
+        "ai",
+        "machine learning",
+        "ml",
+        "dados",
+        "modelo",
+        "python",
+        "pytorch"
+      ],
+      "related": [
+        "areas",
+        "tecnologias",
+        "como-comecar"
+      ]
+    },
+    {
+      "id": "robotica",
+      "title": "Robótica",
+      "keywords": [
+        "robotica",
+        "robo",
+        "eletronica",
+        "prototipo",
+        "sensor",
+        "arduino",
+        "raspberry",
+        "circuito"
+      ],
+      "related": [
+        "areas",
+        "tecnologias",
+        "como-comecar"
+      ]
+    },
+    {
+      "id": "devops",
+      "title": "DevOps",
+      "keywords": [
+        "devops",
+        "ci",
+        "cd",
+        "pipeline",
+        "infraestrutura",
+        "observabilidade",
+        "container",
+        "entrega",
+        "deploy"
+      ],
+      "related": [
+        "areas",
+        "tecnologias",
+        "automacao",
+        "como-comecar"
+      ]
+    },
+    {
+      "id": "automacao",
+      "title": "Automação",
+      "keywords": [
+        "automacao",
+        "automatizar",
+        "script",
+        "scripts",
+        "fluxo",
+        "fluxos",
+        "integracao",
+        "rpa",
+        "tarefa repetitiva"
+      ],
+      "related": [
+        "areas",
+        "devops",
+        "tecnologias",
+        "como-comecar"
+      ]
+    },
+    {
+      "id": "empreendedorismo",
+      "title": "Empreendedorismo",
+      "keywords": [
+        "empreendedorismo",
+        "empreender",
+        "negocio",
+        "startup",
+        "produto",
+        "validacao",
+        "iniciativa",
+        "comunidade"
+      ],
+      "related": [
+        "areas",
+        "como-comecar",
+        "participar"
+      ]
+    },
+    {
+      "id": "parceiras",
+      "title": "Instituições parceiras",
+      "keywords": [
+        "universidade",
+        "parceira",
+        "uffs",
+        "uri",
+        "unijui",
+        "setrem",
+        "iffar",
+        "unipampa",
+        "fasa",
+        "uergs",
+        "ufsm",
+        "unicruz",
+        "campus",
+        "faculdade",
+        "instituto"
+      ],
+      "related": [
+        "local",
+        "participar",
+        "areas"
+      ]
+    },
+    {
+      "id": "como-funciona",
+      "title": "Como a comunidade funciona",
+      "keywords": [
+        "como funciona",
+        "encontros",
+        "grupos",
+        "projetos",
+        "estudo",
+        "pratica",
+        "compartilhar",
+        "evento",
+        "reuniao"
+      ],
+      "related": [
+        "principios",
+        "participar"
+      ]
+    },
+    {
+      "id": "como-comecar",
+      "title": "Como começar",
+      "keywords": [
+        "comecar",
+        "primeiro",
+        "inicio",
+        "desafio",
+        "iniciante",
+        "por onde",
+        "trilha"
+      ],
+      "related": [
+        "software",
+        "inteligencia",
+        "robotica",
+        "devops",
+        "automacao",
+        "empreendedorismo",
+        "participar"
+      ]
+    },
+    {
+      "id": "quem",
+      "title": "Quem pode participar",
+      "keywords": [
+        "quem",
+        "pode",
+        "requisito",
+        "idade",
+        "iniciante",
+        "profissional",
+        "estudante",
+        "gratis",
+        "gratuito",
+        "custo"
+      ],
+      "related": [
+        "participar",
+        "kit"
+      ]
+    },
+    {
+      "id": "participar",
+      "title": "Como fazer parte",
+      "keywords": [
+        "fazer parte",
+        "entrar",
+        "participar",
+        "juntar",
+        "inscrever",
+        "membro",
+        "whatsapp",
+        "zap",
+        "grupo",
+        "wpp",
+        "conversa"
+      ],
+      "related": [
+        "quem",
+        "redes"
+      ]
+    },
+    {
+      "id": "tecnologias",
+      "title": "Tecnologias e ferramentas",
+      "keywords": [
+        "tecnologia",
+        "ferramenta",
+        "typescript",
+        "react",
+        "node",
+        "ruby",
+        "rails",
+        "python",
+        "pytorch",
+        "git",
+        "github",
+        "docker",
+        "linguagem",
+        "stack"
+      ],
+      "related": [
+        "areas",
+        "software",
+        "inteligencia",
+        "robotica",
+        "devops",
+        "automacao"
+      ]
+    },
+    {
+      "id": "kit",
+      "title": "Kit da comunidade",
+      "keywords": [
+        "kit",
+        "mousepad",
+        "camiseta",
+        "camisa",
+        "copo",
+        "loja",
+        "comprar",
+        "preco",
+        "produto",
+        "merchandising"
+      ],
+      "related": [
+        "identidade",
+        "participar"
+      ]
+    },
+    {
+      "id": "redes",
+      "title": "Redes sociais",
+      "keywords": [
+        "rede",
+        "social",
+        "facebook",
+        "instagram",
+        "youtube",
+        "tiktok",
+        "contato",
+        "seguir"
+      ],
+      "related": [
+        "participar",
+        "identidade"
+      ]
+    },
+    {
+      "id": "eventos",
+      "title": "Eventos",
+      "keywords": [
+        "evento",
+        "eventos",
+        "agenda",
+        "encontro",
+        "encontros",
+        "calendario",
+        "palestra",
+        "workshop",
+        "data"
+      ],
+      "related": [
+        "hackatons",
+        "participar",
+        "como-funciona"
+      ]
+    },
+    {
+      "id": "hackatons",
+      "title": "Hackatons",
+      "keywords": [
+        "hackaton",
+        "hackatons",
+        "hackathon",
+        "hackathons",
+        "maratona",
+        "desafio",
+        "prototipo"
+      ],
+      "related": [
+        "eventos",
+        "participar",
+        "empreendedorismo"
+      ]
+    },
+    {
+      "id": "blog",
+      "title": "Blog",
+      "keywords": [
+        "blog",
+        "artigo",
+        "artigos",
+        "texto",
+        "textos",
+        "caderno",
+        "leitura",
+        "publicacao",
+        "publicacoes"
+      ],
+      "related": [
+        "areas",
+        "essencia"
+      ]
+    }
+  ]
+}

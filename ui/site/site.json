@@ -1,0 +1,51 @@
+{
+  "name": "Tech Missões",
+  "tagline": "Juntos, construímos o futuro.",
+  "title": "Tech Missões | Comunidade de tecnologia em Cerro Largo, RS",
+  "description": "Comunidade de estudo e desenvolvimento em Cerro Largo, na região das Missões (RS). Software, inteligência artificial, robótica, DevOps, automação e empreendedorismo, na prática e em comunidade.",
+  "locationBar": "CERRO LARGO, RS · REGIÃO DAS MISSÕES",
+  "place": {
+    "locality": "Cerro Largo",
+    "region": "RS",
+    "regionName": "Rio Grande do Sul",
+    "country": "BR",
+    "area": "Região das Missões",
+    "latitude": -28.1333,
+    "longitude": -54.7333
+  },
+  "links": {
+    "whatsapp": "https://chat.whatsapp.com/DxL2QnSAtlSDZhg5dsngr6",
+    "facebook": "",
+    "instagram": "",
+    "youtube": "",
+    "tiktok": ""
+  },
+  "features": {
+    "partners": false
+  },
+  "sitemapImages": [
+    "/opengraph-image",
+    "/illustrations/community-developer.png",
+    "/illustrations/mousepad.png",
+    "/illustrations/camisa.png",
+    "/illustrations/copo.png"
+  ],
+  "keywords": [
+    "Tech Missões",
+    "Tech Missoes",
+    "Cerro Largo",
+    "região das Missões",
+    "Rio Grande do Sul",
+    "comunidade de tecnologia",
+    "engenharia de software",
+    "inteligência artificial",
+    "robótica",
+    "DevOps",
+    "automação",
+    "empreendedorismo",
+    "eventos",
+    "hackatons",
+    "blog",
+    "estudo de programação"
+  ]
+}

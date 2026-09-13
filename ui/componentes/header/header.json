@@ -1,0 +1,19 @@
+{
+  "cta": { "href": "/entrar", "label": "Entrar" },
+  "links": [
+    { "href": "#comunidade", "label": "A comunidade" },
+    { "href": "#areas", "label": "Academy" },
+    {
+      "href": "/eventos",
+      "label": "Eventos",
+      "children": [
+        { "href": "/hackatons", "label": "Hackatons" },
+        { "href": "/eventos", "label": "Eventos" }
+      ]
+    },
+    { "href": "/blog", "label": "Blog" },
+    { "href": "#parceiras", "label": "Parceiras", "feature": "partners" },
+    { "href": "#como-funciona", "label": "Como funciona" },
+    { "href": "#starter-kit", "label": "Nosso kit" }
+  ]
+}

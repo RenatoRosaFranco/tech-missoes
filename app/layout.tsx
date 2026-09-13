@@ -1,13 +1,24 @@
+/**
+ * Root layout for the Tech Missões App Router.
+ *
+ * Sets document language, SEO metadata, theme bootstrap, JSON-LD, and
+ * optional Google Analytics.
+ *
+ * @packageDocumentation
+ */
+
 import type { Metadata, Viewport } from "next";
-import { GoogleAnalytics } from "@/components/layout/google-analytics";
-import { JsonLd } from "@/components/layout/json-ld";
+import { GoogleAnalytics } from "@/ui/componentes/google-analytics/google-analytics";
+import { JsonLd } from "@/ui/componentes/json-ld/json-ld";
 import { getSiteUrl, googleAnalyticsId, googleSiteVerification, siteDescription, siteName, sitePlace, siteTitle } from "@/lib/site";
-import "./globals.css";
+import { siteKeywords } from "@/ui/site/site";
+import "@/ui/site/site.css";
 
 const siteUrl = getSiteUrl();
 const googleVerification = googleSiteVerification();
 const gaId = googleAnalyticsId();
 
+/** Default metadata inherited by every route. */
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -20,23 +31,7 @@ export const metadata: Metadata = {
   creator: siteName,
   publisher: siteName,
   category: "education",
-  keywords: [
-    "Tech Missões",
-    "Tech Missoes",
-    "Cerro Largo",
-    "região das Missões",
-    "Rio Grande do Sul",
-    "comunidade de tecnologia",
-    "engenharia de software",
-    "inteligência artificial",
-    "robótica",
-    "DevOps",
-    "automação",
-    "empreendedorismo",
-    "eventos",
-    "blog",
-    "estudo de programação",
-  ],
+  keywords: siteKeywords,
   alternates: {
     canonical: "/",
     languages: {
@@ -81,6 +76,7 @@ export const metadata: Metadata = {
   },
 };
 
+/** Theme-aware viewport and color scheme. */
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#faf9f6" },
@@ -90,6 +86,11 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+/**
+ * HTML shell wrapping every page.
+ *
+ * @param children - Route segment to render inside `<body>`.
+ */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" dir="ltr" suppressHydrationWarning>

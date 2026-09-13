@@ -1,0 +1,95 @@
+{
+  "title": "Blog",
+  "description": "Textos da Tech Missões sobre estudo, prática e tecnologia em Cerro Largo e na região das Missões.",
+  "location": "CADERNO DA COMUNIDADE",
+  "footerLine": "O que a gente aprende, a gente escreve.",
+  "eyebrow": "BLOG · CADERNO DA COMUNIDADE",
+  "heading": "O que a gente vai entendendo.",
+  "lead": "Notas de estudo, caminhos nas trilhas e o que a comunidade descobre na prática.\nBusque um texto ou filtre pela trilha.",
+  "posts": [
+    {
+      "slug": "aprender-fora-dos-grandes-centros",
+      "title": "Aprender tecnologia fora dos grandes centros",
+      "excerpt": "Cerro Largo não é o fim da linha. É um ponto de partida: a conversa, o código e a próxima pergunta cabem aqui.",
+      "date": "2026-09-08",
+      "dateLabel": "08 set 2026",
+      "track": "Comunidade",
+      "readingMinutes": 4,
+      "cover": "/blog/territorio.png",
+      "coverAlt": "Arco missioneiro em vinho e creme, com traços de circuito saindo do território.",
+      "author": {
+        "name": "Helena Vargas",
+        "role": "Comunidade Tech Missões",
+        "initials": "HV"
+      },
+      "paragraphs": [
+        "Grandes ideias também nascem fora dos grandes centros. A Tech Missões parte dessa convicção: conhecimento cresce quando é compartilhado, e a região das Missões tem gente curiosa o bastante para pôr a mão na massa.",
+        "Estudar longe das capitais não é espera. É escolha de território. Aqui o problema costuma ter nome, rua e vizinho. Um script, um circuito ou uma conversa no WhatsApp já mudam o dia de alguém.",
+        "O caminho é o mesmo em qualquer mapa: fundamentos sólidos, prática em público e companhia. A diferença é que, nas Missões, o que a gente constrói volta para a cidade que nos formou."
+      ]
+    },
+    {
+      "slug": "primeira-linha-de-codigo",
+      "title": "A primeira linha de código não precisa ser perfeita",
+      "excerpt": "Engenharia de software começa com lógica, Git e um problema real. O resto se aprende em comunidade.",
+      "date": "2026-09-02",
+      "dateLabel": "02 set 2026",
+      "track": "Engenharia de software",
+      "readingMinutes": 5,
+      "cover": "/blog/software.png",
+      "coverAlt": "Mesa de rascunho em creme com a primeira linha traçada em vinho, ainda imperfeita.",
+      "author": {
+        "name": "Mateus Klein",
+        "role": "Engenharia de software",
+        "initials": "MK"
+      },
+      "paragraphs": [
+        "Escrever software é mais do que fazer o programa rodar. É entender o sistema, documentar a decisão e deixar o próximo passo visível para outra pessoa.",
+        "Um primeiro caminho cabe em três gestos: explorar lógica e controle de versão com Git, construir uma aplicação para um problema da sua comunidade e convidar alguém para revisar o código.",
+        "Perfeição na primeira linha é um mito que trava quem está começando. O que abre porta é clareza: o que o programa faz, por que existe e o que ainda falta. Isso se ensina. Isso se compartilha."
+      ]
+    },
+    {
+      "slug": "ia-com-responsabilidade",
+      "title": "Inteligência artificial começa com uma pergunta honesta",
+      "excerpt": "Antes do modelo, o dado. Antes do dado, o problema. Experimentar com responsabilidade é o ofício da trilha.",
+      "date": "2026-08-25",
+      "dateLabel": "25 ago 2026",
+      "track": "Inteligência artificial",
+      "readingMinutes": 4,
+      "cover": "/blog/ia.png",
+      "coverAlt": "Constelação de nós em creme sobre um campo vinho, com algumas conexões de propósito deixadas em aberto.",
+      "author": {
+        "name": "Ana Luísa Weber",
+        "role": "Inteligência artificial",
+        "initials": "AW"
+      },
+      "paragraphs": [
+        "Inteligência artificial não começa no modelo. Começa numa pergunta que cabe no território: que dado existe, o que ele não diz e quem é afetado pelo resultado.",
+        "Na prática da comunidade, o caminho é curto e honesto. Python com conjuntos pequenos, um experimento simples, comparação de resultados e o registro do que o modelo não sabe fazer.",
+        "Responsabilidade aqui não é slogan. É o hábito de publicar a limitação junto com o acerto. Sem isso, a ferramenta impressiona. Com isso, ela ensina."
+      ]
+    },
+    {
+      "slug": "robotica-com-o-que-se-tem-a-mao",
+      "title": "Robótica com o que se tem à mão",
+      "excerpt": "Sensor, protoboard e um pouco de paciência. Ideias ganham movimento quando o circuito encontra o código.",
+      "date": "2026-08-11",
+      "dateLabel": "11 ago 2026",
+      "track": "Robótica",
+      "readingMinutes": 4,
+      "cover": "/blog/robotica.png",
+      "coverAlt": "Protoboard vista de cima, com trilhas de cobre, um sensor e fios sobre a mesa de trabalho.",
+      "author": {
+        "name": "João Pedro Kunz",
+        "role": "Robótica",
+        "initials": "JK"
+      },
+      "paragraphs": [
+        "Robótica é a hora em que a programação sai da tela. Um sensor lê o mundo, um microcontrolador decide, um atuador responde. O laboratório pode ser uma mesa da sala.",
+        "Começar em simulador reduz o medo de queimar peça. Depois vem o protótipo que reage a uma leitura real — luz, distância, um botão. O registro do circuito e do código é o convite para outra pessoa repetir o experimento.",
+        "Não é preciso um ateliê completo. É preciso curiosidade, um passo pequeno e alguém para olhar o que travou. Movimento também se constrói em comunidade."
+      ]
+    }
+  ]
+}

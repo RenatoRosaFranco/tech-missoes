@@ -1,10 +1,26 @@
+/**
+ * Default Open Graph image (`/opengraph-image`).
+ *
+ * @packageDocumentation
+ */
+
 import { ImageResponse } from "next/og";
 import { siteName, siteTagline } from "@/lib/site";
 
+/** Accessible description of the generated image. */
 export const alt = "Tech Missões — comunidade de tecnologia em Cerro Largo, na região das Missões.";
+
+/** Social-card dimensions in pixels. */
 export const size = { width: 1200, height: 630 };
+
+/** MIME type of the generated PNG. */
 export const contentType = "image/png";
 
+/**
+ * Renders the 1200×630 social preview used by Open Graph and Twitter.
+ *
+ * @returns Edge `ImageResponse` for the default share card.
+ */
 export default function OpenGraphImage() {
   return new ImageResponse(
     (

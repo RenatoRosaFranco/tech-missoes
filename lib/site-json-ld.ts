@@ -1,17 +1,39 @@
-import { blogPosts, pageCopy, studyTracks } from "@/lib/app-config";
+/**
+ * Schema.org structured data for the site.
+ *
+ * Builds a JSON-LD graph with organization, website, pages, study tracks,
+ * and an FAQ derived from the chatbot knowledge base.
+ *
+ * @packageDocumentation
+ */
+
+import { studyTracks } from "@/ui/componentes/trilhas/tracks";
+import { blogPage, blogPosts } from "@/ui/paginas/blog/posts";
+import eventosPage from "@/ui/paginas/eventos/eventos.json";
+import hackatonsPage from "@/ui/paginas/hackatons/hackatons.json";
 import { blogPostPath } from "@/lib/blog";
 import { communityKnowledge } from "@/lib/community-knowledge";
 import { getSiteUrl, siteDescription, siteName, sitePlace, socialUrls } from "@/lib/site";
 
+/** Canonical FAQ questions, keyed by knowledge-topic `id`. */
 const faqQuestions: Record<string, string> = {
   identidade: "O que é a Tech Missões?",
   participar: "Como faço parte?",
   areas: "Quais são as áreas de estudo?",
   eventos: "Tem eventos?",
+  hackatons: "Tem hackaton?",
   blog: "Tem blog?",
   kit: "Tem kit da comunidade?",
 };
 
+/**
+ * Builds the JSON-LD graph embedded in `<head>`.
+ *
+ * Includes Organization, WebSite, internal pages, an ItemList of tracks,
+ * and an FAQPage with markdown stripped from answers.
+ *
+ * @returns Object serializable as `application/ld+json`.
+ */
 export function siteJsonLd() {
   const siteUrl = getSiteUrl();
   const organizationId = `${siteUrl}/#organizacao`;
@@ -87,8 +109,18 @@ export function siteJsonLd() {
         "@type": "WebPage",
         "@id": `${siteUrl}/eventos`,
         url: `${siteUrl}/eventos`,
-        name: pageCopy.events.title,
-        description: pageCopy.events.description,
+        name: eventosPage.title,
+        description: eventosPage.description,
+        inLanguage: "pt-BR",
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/hackatons`,
+        url: `${siteUrl}/hackatons`,
+        name: hackatonsPage.title,
+        description: hackatonsPage.description,
         inLanguage: "pt-BR",
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
@@ -97,8 +129,8 @@ export function siteJsonLd() {
         "@type": "CollectionPage",
         "@id": `${siteUrl}/blog`,
         url: `${siteUrl}/blog`,
-        name: pageCopy.blog.title,
-        description: pageCopy.blog.description,
+        name: blogPage.title,
+        description: blogPage.description,
         inLanguage: "pt-BR",
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },

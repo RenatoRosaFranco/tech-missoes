@@ -1,0 +1,46 @@
+{
+  "sections": [
+    {
+      "id": "inicio",
+      "label": "Início"
+    },
+    {
+      "id": "areas",
+      "label": "Áreas de estudo"
+    },
+    {
+      "id": "tecnologias",
+      "label": "Tecnologias e ferramentas"
+    },
+    {
+      "id": "comunidade",
+      "label": "A comunidade"
+    },
+    {
+      "id": "parceiras",
+      "label": "Instituições parceiras",
+      "feature": "partners"
+    },
+    {
+      "id": "como-funciona",
+      "label": "Como funciona"
+    },
+    {
+      "id": "participe",
+      "label": "Trilhas de estudo"
+    },
+    {
+      "id": "faca-parte",
+      "label": "Faça parte da comunidade"
+    },
+    {
+      "id": "starter-kit",
+      "label": "Kit da comunidade"
+    }
+  ],
+  "locationTyped": [
+    "CONHECIMENTO QUE CONECTA. TECNOLOGIA QUE TRANSFORMA.",
+    "APRENDER COM PROFUNDIDADE. CONSTRUIR NA PRÁTICA.",
+    "RAÍZES LOCAIS. CONEXÕES SEM LIMITES."
+  ]
+}

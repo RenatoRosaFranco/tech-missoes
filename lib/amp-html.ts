@@ -1,17 +1,25 @@
-import {
-  communityLinks,
-  homeCopy,
-  homeTyped,
-  howSteps,
-  kitProducts,
-  locationBarLabel,
-  navCta,
-  navLinks,
-  siteFooter,
-  starterKit,
-  studyTracks,
-  technologies,
-} from "@/lib/app-config";
+/**
+ * AMP rendering of the home page.
+ *
+ * Produces a self-contained HTML ⚡ document with the same home content
+ * and shared JSON-LD, for the `/amp` route.
+ *
+ * @packageDocumentation
+ */
+
+import { navCta, navLinks } from "@/ui/componentes/header/nav";
+import areas from "@/ui/componentes/areas/areas.json";
+import community from "@/ui/componentes/community/community.json";
+import footer from "@/ui/componentes/footer/footer.json";
+import hero from "@/ui/componentes/hero/hero.json";
+import how from "@/ui/componentes/how/how.json";
+import join from "@/ui/componentes/join/join.json";
+import membership from "@/ui/componentes/membership/membership.json";
+import principles from "@/ui/componentes/principles/principles.json";
+import kit from "@/ui/componentes/starter-kit/starter-kit.json";
+import technologiesCopy from "@/ui/componentes/technologies/technologies.json";
+import { studyTracks } from "@/ui/componentes/trilhas/tracks";
+import { communityLinks, locationBarLabel } from "@/ui/site/site";
 import { siteJsonLd } from "@/lib/site-json-ld";
 import {
   getSiteUrl,
@@ -22,6 +30,11 @@ import {
   siteTitle,
 } from "@/lib/site";
 
+/**
+ * Escapes text for safe HTML interpolation.
+ *
+ * @param value - Raw content from configuration.
+ */
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -30,10 +43,20 @@ function escapeHtml(value: string) {
     .replace(/"/g, "&quot;");
 }
 
+/**
+ * Same as {@link escapeHtml}, converting line breaks to `<br>`.
+ *
+ * @param value - Possibly multiline text.
+ */
 function lines(value: string) {
   return escapeHtml(value).replace(/\n/g, "<br>");
 }
 
+/**
+ * First item in a phrase list, used by `typed` animations.
+ *
+ * @param values - Config sequence; may be empty.
+ */
 function first(values: string[]) {
   return values[0] ?? "";
 }
@@ -107,14 +130,49 @@ address{font-style:normal;font-size:12px;color:var(--muted)}
 }
 `.replace(/\n/g, "").trim();
 
+/**
+ * Full AMP document for the home page.
+ *
+ * Includes the sidebar, home sections, kit, conditional analytics, and
+ * Search Console verification when those variables are set.
+ *
+ * @returns HTML string ready to serve on the AMP route.
+ */
 export function renderAmpPage() {
   const siteUrl = getSiteUrl();
   const gaId = googleAnalyticsId();
   const verification = googleSiteVerification();
   const year = new Date().getFullYear();
   const whatsapp = communityLinks.whatsapp;
-  const copy = homeCopy;
-  const nav = [...navLinks, navCta]
+  const copy = {
+    hero,
+    principles,
+    areas,
+    community,
+    how,
+    join,
+    membership,
+    kit,
+    technologies: technologiesCopy,
+  };
+  const homeTyped = {
+    areas: areas.typed,
+    around: technologiesCopy.typed,
+    community: community.typed,
+    how: how.typed,
+    join: join.typed,
+    membership: membership.typed,
+    caption: membership.caption,
+    kit: kit.typed,
+    footer: footer.typed,
+    hero: hero.typed,
+  };
+  const howSteps = how.steps;
+  const kitProducts = kit.products;
+  const starterKit = { price: kit.price, purchaseUrl: kit.purchaseUrl };
+  const technologies = technologiesCopy.items;
+  const siteFooter = footer;
+  const nav = [...navLinks.flatMap(item => item.children?.length ? item.children : [item]), navCta]
     .map(item => `<a href="${escapeHtml(item.href.startsWith("/") ? `${siteUrl}${item.href}` : item.href)}">${escapeHtml(item.label)}</a>`)
     .join("");
   const kitCta = starterKit.purchaseUrl

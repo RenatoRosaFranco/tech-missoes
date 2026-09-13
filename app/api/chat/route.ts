@@ -1,8 +1,25 @@
-import { answerFromKnowledge, systemPrompt, type ChatTurn } from "@/lib/community-guide";
+/**
+ * Community chat API (`POST /api/chat`).
+ *
+ * Validates the history and answers with ChatGPT via {@link answerWithChatGPT}.
+ *
+ * @packageDocumentation
+ */
+
+import { answerWithChatGPT, type ChatTurn } from "@/lib/community-guide";
 
 const maxMessageLength = 500;
 const maxHistory = 16;
 
+/**
+ * Parses and sanitizes a chat history payload.
+ *
+ * Keeps the last 16 turns, caps each message, and requires
+ * the final turn to come from the user.
+ *
+ * @param value - Unknown `messages` field from the request body.
+ * @returns Valid {@link ChatTurn} list, or `null` when the payload is unusable.
+ */
 function asTurns(value: unknown): ChatTurn[] | null {
   if (!Array.isArray(value)) return null;
   const turns: ChatTurn[] = [];
@@ -16,27 +33,12 @@ function asTurns(value: unknown): ChatTurn[] | null {
   return turns.length && turns.at(-1)?.role === "user" ? turns : null;
 }
 
-async function answerWithModel(messages: ChatTurn[]) {
-  const key = process.env.OPENAI_API_KEY;
-  if (!key) return null;
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${key}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-      temperature: 0.3,
-      messages: [{ role: "system", content: systemPrompt() }, ...messages],
-    }),
-  });
-  if (!response.ok) return null;
-  const payload = await response.json() as { choices?: { message?: { content?: string } }[] };
-  const text = payload.choices?.[0]?.message?.content?.trim();
-  return text || null;
-}
-
+/**
+ * Answers a community question with ChatGPT.
+ *
+ * @param request - JSON body `{ messages: ChatTurn[] }`.
+ * @returns `{ reply }` or a 400/503 error payload in Portuguese.
+ */
 export async function POST(request: Request) {
   let body: unknown;
   try {
@@ -49,9 +51,9 @@ export async function POST(request: Request) {
     return Response.json({ error: "Envie uma pergunta sobre a comunidade." }, { status: 400 });
   }
   try {
-    const reply = await answerWithModel(messages) ?? answerFromKnowledge(messages);
+    const reply = await answerWithChatGPT(messages);
     return Response.json({ reply });
   } catch {
-    return Response.json({ reply: answerFromKnowledge(messages) });
+    return Response.json({ error: "O guia está indisponível no momento." }, { status: 503 });
   }
 }

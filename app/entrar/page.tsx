@@ -1,14 +1,24 @@
-import type { Metadata } from "next";
-import { LoginPage } from "@/components/auth/login-page";
-import { communityLinks } from "@/lib/app-config";
+/**
+ * Sign-in route (`/entrar`).
+ *
+ * Excluded from search indexing.
+ *
+ * @packageDocumentation
+ */
 
+import type { Metadata } from "next";
+import { Entrar } from "@/ui/paginas/entrar/entrar";
+import copy from "@/ui/paginas/entrar/entrar.json";
+
+/** Noindex metadata for the login screen. */
 export const metadata: Metadata = {
-  title: "Entrar",
-  description: "Acesse a área de membros da Tech Missões, a comunidade de estudo e desenvolvimento de Cerro Largo e da região das Missões.",
+  title: copy.title,
+  description: copy.description,
   robots: { index: false, follow: false },
   alternates: { canonical: "/entrar" },
 };
 
+/** Community login page. */
 export default function Page() {
-  return <LoginPage whatsapp={communityLinks.whatsapp} />;
+  return <Entrar />;
 }

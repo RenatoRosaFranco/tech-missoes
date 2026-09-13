@@ -1,0 +1,21 @@
+{
+  "eyebrow": "05 / DO CONHECIMENTO À PRÁTICA",
+  "lead": "Uma comunidade se constrói com participação.\nCada pessoa tem algo a aprender e a ensinar.",
+  "typed": [
+    "Aprender. Fazer. Compartilhar."
+  ],
+  "steps": [
+    {
+      "title": "Estudamos juntos",
+      "text": "Grupos de estudo para aprofundar fundamentos, discutir referências e trocar descobertas em cada área."
+    },
+    {
+      "title": "Tiramos ideias do papel",
+      "text": "Projetos colaborativos para experimentar tecnologias e desenvolver soluções conectadas à nossa realidade."
+    },
+    {
+      "title": "Compartilhamos o caminho",
+      "text": "Trocas de experiências, demonstrações e conversas abertas. O aprendizado de uma pessoa abre portas para outras."
+    }
+  ]
+}

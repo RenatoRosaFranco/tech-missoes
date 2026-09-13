@@ -1,0 +1,114 @@
+.starter-kit {
+  background: var(--surface);
+  padding-block: 68px;
+  margin-bottom: 55px;
+}
+
+.kit-heading h2 em {
+  font-family: Georgia, serif;
+  color: var(--red);
+  font-weight: 400;
+}
+
+.kit-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.kit-product { min-width: 0; }
+
+.kit-art {
+  height: 265px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.kit-art > svg { width: 100%; height: 245px; }
+
+.kit-mousepad {
+  width: 88%;
+  padding: 17px 13px 12px;
+  background: #292a27;
+  color: #ece9de;
+  border-radius: 8px;
+  border: 2px solid #484940;
+  transform: rotate(-7deg);
+  box-shadow: 6px 14px 16px #0002;
+}
+
+.pad-heading { font-size: 16px; font-weight: 700; letter-spacing: -.5px; }
+
+.pad-heading > span { display: block; margin-top: 5px; color: #ed9da6; font: 6px monospace; letter-spacing: 1px; }
+
+.pad-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 17px; }
+
+.pad-columns strong { color: #ed9da6; font: 7px monospace; display: block; margin-bottom: 8px; }
+
+.pad-columns span { display: block; font: 7px/1.9 monospace; }
+
+.pad-footer { display: flex; justify-content: space-between; margin-top: 16px; padding-top: 8px; border-top: 1px solid #56574e; font: 5px monospace; }
+
+.kit-product-copy { padding-top: 22px; }
+
+.kit-product-copy .eyebrow { font-size: 9px; color: var(--muted); }
+
+.kit-product-copy h3 { font-size: 21px; font-weight: 500; letter-spacing: -.5px; margin: 11px 0; }
+
+.kit-product-copy p { margin: 0; font-size: 13px; max-width: 320px; }
+
+.kit-order { display: flex; align-items: center; justify-content: space-between; gap: 30px; border-top: 1px solid var(--border); margin-top: 34px; padding-top: 30px; }
+
+.kit-order .eyebrow { color: var(--red); }
+
+.kit-order h3 { font-size: 23px; letter-spacing: -.6px; font-weight: 500; margin: 12px 0 8px; }
+
+.kit-order p { font-size: 12px; margin: 0 0 12px; }
+
+.kit-order small { color: var(--muted); font-size: 10px; }
+
+.kit-buy { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; flex-shrink: 0; }
+
+.kit-price { font-size: 27px; font-weight: 600; }
+
+.kit-buy button { border: 0; }
+
+.kit-buy button:disabled { opacity: .65; cursor: not-allowed; }
+
+.kit-availability { font-size: 10px; color: var(--muted); }
+
+@media(prefers-reduced-motion:no-preference) {
+  body, .header, .header::before, .community, .starter-kit, .track-selector, .navigation, .kit-art {
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .button, .nav-cta, .theme-toggle, .social-links > a, .navigation > a, .nav-group-trigger, .nav-submenu a, .text-link {
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .25s ease;
+  }
+  .button:not(:disabled):hover, .social-links > a:hover { transform: translateY(-2px); }
+  .button:not(:disabled):active, .theme-toggle:active { transform: scale(.97); }
+  .kit-art > svg, .kit-mousepad { transition: transform .55s cubic-bezier(.22,1,.36,1); }
+  .kit-product:hover .kit-art > svg { transform: translateY(-5px) rotate(-2deg); }
+  .kit-product:hover .kit-mousepad { transform: rotate(-3deg) translateY(-4px); }
+  .navigation.open { animation: menu-enter .25s ease both; }
+  .track-plan { animation: menu-enter .3s ease both; }
+  @keyframes menu-enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+}
+
+@media(max-width:760px) {
+  .starter-kit { padding-block: 45px; margin-bottom: 35px; }
+  .kit-products { grid-template-columns: 1fr; gap: 30px; }
+  .kit-art { height: 250px; }
+  .kit-mousepad { max-width: 310px; }
+  .kit-product-copy { padding-top: 18px; }
+  .kit-product-copy p { max-width: none; }
+  .kit-order { flex-direction: column; align-items: flex-start; gap: 25px; }
+  .kit-buy { align-items: flex-start; }
+}
+
+.kit-art-mousepad, .kit-art-shirt, .kit-art-cup { position: relative; background: #e9e8e3; }
+
+.kit-product-photo { object-fit: contain; }

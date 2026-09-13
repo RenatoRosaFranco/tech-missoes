@@ -1,0 +1,83 @@
+{
+  "eyebrow": "04 / INSTITUIÇÕES PARCEIRAS",
+  "title": "Caminhamos com as",
+  "lead": "Universidades e faculdades da Rota das Missões\ne do noroeste, ao lado de quem estuda e constrói.",
+  "pending": "As parcerias com universidades e institutos da região ainda estão sendo fechadas. Quando estiverem confirmadas, a seção Instituições parceiras entra no site.",
+  "typed": [
+    "universidades da região.",
+    "instituições das Missões.",
+    "faculdades do noroeste."
+  ],
+  "items": [
+    {
+      "id": "uffs",
+      "name": "UFFS",
+      "full": "Universidade Federal da Fronteira Sul",
+      "place": "Campus Cerro Largo",
+      "href": "https://www.uffs.edu.br/"
+    },
+    {
+      "id": "uri",
+      "name": "URI",
+      "full": "Universidade Regional Integrada do Alto Uruguai e das Missões",
+      "place": "Santo Ângelo, São Luiz Gonzaga e Cerro Largo",
+      "href": "https://www.uri.br/"
+    },
+    {
+      "id": "unijui",
+      "name": "UNIJUÍ",
+      "full": "Universidade Regional do Noroeste do Estado do Rio Grande do Sul",
+      "place": "Ijuí",
+      "href": "https://www.unijui.edu.br/"
+    },
+    {
+      "id": "setrem",
+      "name": "SETREM",
+      "full": "Sociedade Educacional Três de Maio",
+      "place": "Três de Maio",
+      "href": "https://www.setrem.com.br/"
+    },
+    {
+      "id": "iffar",
+      "name": "IFFar",
+      "full": "Instituto Federal Farroupilha",
+      "place": "Santo Ângelo e rede federal",
+      "href": "https://www.iffarroupilha.edu.br/"
+    },
+    {
+      "id": "unipampa",
+      "name": "UNIPAMPA",
+      "full": "Universidade Federal do Pampa",
+      "place": "São Borja e demais campi",
+      "href": "https://unipampa.edu.br/"
+    },
+    {
+      "id": "fasa",
+      "name": "FASA",
+      "full": "Faculdade Santo Ângelo",
+      "place": "Santo Ângelo",
+      "href": "https://sejafasa.com/"
+    },
+    {
+      "id": "uergs",
+      "name": "UERGS",
+      "full": "Universidade Estadual do Rio Grande do Sul",
+      "place": "Unidade São Luiz Gonzaga",
+      "href": "https://www.uergs.edu.br/"
+    },
+    {
+      "id": "ufsm",
+      "name": "UFSM",
+      "full": "Universidade Federal de Santa Maria",
+      "place": "Campus Palmeira das Missões",
+      "href": "https://www.ufsm.br/unidades-universitarias/palmeira-das-missoes/"
+    },
+    {
+      "id": "unicruz",
+      "name": "UNICRUZ",
+      "full": "Universidade de Cruz Alta",
+      "place": "Cruz Alta",
+      "href": "https://www.unicruz.edu.br/"
+    }
+  ]
+}
