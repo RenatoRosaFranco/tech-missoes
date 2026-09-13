@@ -1,0 +1,168 @@
+@use "../../site/mixins" as *;
+
+.plan-label {
+  font-size: 9px;
+  font-family: $font-mono;
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 24px;
+  color: var(--red);
+}
+
+.selector-note {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin: 20px 0 0;
+  font-size: 10px;
+}
+
+.track-bottom {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  > span:first-child {
+    font-family: $font-mono;
+    font-size: 8px;
+    letter-spacing: .2px;
+    @include tablet {
+      font-size: 7px;
+    }
+    @include mobile {
+      font-size: 8px;
+    }
+  }
+  > span:last-child {
+    color: var(--red);
+    font-size: 16px;
+  }
+}
+
+.track-card {
+  @include glow-surface;
+  @include glow-surface-dark;
+  padding: 16px 18px 14px;
+  border: 1px solid color-mix(in srgb, var(--red) 16%, var(--border));
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  transition: transform .2s,border-color .2s;
+  @include tablet {
+    padding: 14px 16px;
+  }
+  @include mobile {
+    padding: 16px;
+  }
+  &:hover {
+    border-color: color-mix(in srgb, var(--red) 32%, var(--border));
+    transform: translateY(-4px);
+  }
+  + .track-card {
+    border-left: 1px solid color-mix(in srgb, var(--red) 16%, var(--border));
+    @include mobile {
+      border-left: 1px solid color-mix(in srgb, var(--red) 16%, var(--border));
+      border-top: 1px solid color-mix(in srgb, var(--red) 16%, var(--border));
+    }
+  }
+  h3 {
+    font-size: 18px;
+    letter-spacing: -.5px;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    max-width: 310px;
+    @include mobile {
+      max-width: 100%;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  @include tablet {
+    grid-template-columns: repeat(2,1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.track-plan {
+  @include motion {
+    animation: menu-enter .3s ease both;
+  }
+}
+
+.track-selector {
+  background: var(--background);
+  padding: 28px;
+  color: var(--foreground);
+  @include mobile {
+    padding: 23px;
+  }
+  @include motion {
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+  }
+  h3 {
+    font-size: 20px;
+    margin: 10px 0 17px;
+    font-weight: 500;
+  }
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  li {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 9px;
+    padding-left: 5px;
+    color: var(--muted);
+  }
+  li::marker {
+    color: var(--red);
+  }
+  ol {
+    padding-left: 19px;
+    margin: 0;
+  }
+  select {
+    width: 100%;
+    border: 1px solid #d1ccc4;
+    background: transparent;
+    color: var(--foreground);
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 0;
+    border-color: var(--border);
+  }
+}
+
+.track-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--red);
+  margin-bottom: 10px;
+  @include mobile {
+    margin-bottom: 8px;
+  }
+  > span {
+    font-family: $font-mono;
+    font-size: 11px;
+    color: var(--muted);
+  }
+}

@@ -7,18 +7,18 @@
  * @packageDocumentation
  */
 
-import { navCta, navLinks } from "@/ui/componentes/header/nav";
-import areas from "@/ui/componentes/areas/areas.json";
-import community from "@/ui/componentes/community/community.json";
-import footer from "@/ui/componentes/footer/footer.json";
-import hero from "@/ui/componentes/hero/hero.json";
-import how from "@/ui/componentes/how/how.json";
-import join from "@/ui/componentes/join/join.json";
-import membership from "@/ui/componentes/membership/membership.json";
-import principles from "@/ui/componentes/principles/principles.json";
-import kit from "@/ui/componentes/starter-kit/starter-kit.json";
-import technologiesCopy from "@/ui/componentes/technologies/technologies.json";
-import { studyTracks } from "@/ui/componentes/trilhas/tracks";
+import { navCta, navLinks } from "@/ui/components/header/nav";
+import areas from "@/ui/components/areas/areas.json";
+import community from "@/ui/components/community/community.json";
+import footer from "@/ui/components/footer/footer.json";
+import hero from "@/ui/components/hero/hero.json";
+import how from "@/ui/components/how/how.json";
+import join from "@/ui/components/join/join.json";
+import membership from "@/ui/components/membership/membership.json";
+import principles from "@/ui/components/principles/principles.json";
+import kit from "@/ui/components/starter-kit/starter-kit.json";
+import technologiesCopy from "@/ui/components/technologies/technologies.json";
+import { studyTracks } from "@/ui/components/tracks/study-tracks";
 import { communityLinks, locationBarLabel } from "@/ui/site/site";
 import { siteJsonLd } from "@/lib/site-json-ld";
 import {

@@ -6,9 +6,9 @@
  * @packageDocumentation
  */
 
-import type { BlogPost } from "@/ui/paginas/blog/posts";
+import type { BlogPost } from "@/ui/pages/blog/posts";
 
-export type { BlogAuthor, BlogPost } from "@/ui/paginas/blog/posts";
+export type { BlogAuthor, BlogPost } from "@/ui/pages/blog/posts";
 
 /**
  * Builds the internal path of an article.

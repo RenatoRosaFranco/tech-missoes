@@ -1,0 +1,105 @@
+@use "../../site/mixins" as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 60px;
+  padding-top: 48px;
+  padding-bottom: 49px;
+  align-items: stretch;
+  @include desktop {
+    gap: 80px;
+  }
+  @include tablet {
+    gap: 30px;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-top: 30px;
+  @include desktop {
+    margin-top: 37px;
+  }
+  @include tablet {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  @include mobile {
+    gap: 22px;
+    margin-top: 25px;
+  }
+}
+
+.hero-copy {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  container-type: inline-size;
+  @include desktop {
+    padding-top: 60px;
+  }
+  @include tablet {
+    padding-top: 20px;
+  }
+  @include mobile {
+    padding-top: 14px;
+  }
+  > p {
+    max-width: 455px;
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 0;
+    @include desktop {
+      font-size: 17px;
+    }
+    @include mobile {
+      font-size: 14px;
+      max-width: 500px;
+    }
+  }
+  h1 {
+    font-size: clamp(24px, 8.6cqw, 62px);
+    letter-spacing: -.045em;
+    line-height: 1.12;
+  }
+}
+
+.hero-footnote {
+  margin-top: auto;
+  padding-top: 39px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .2px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  @include mobile {
+    padding-top: 24px;
+  }
+}
+
+.hero-title-line {
+  white-space: nowrap;
+}
+
+.hero-typed {
+  display: inline-block;
+  min-width: 12ch;
+  white-space: nowrap;
+}
+
+.small-cross {
+  font-size: 19px;
+  color: var(--red);
+}

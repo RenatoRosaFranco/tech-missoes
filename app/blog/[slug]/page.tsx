@@ -7,8 +7,8 @@
  */
 
 import type { Metadata } from "next";
-import { BlogPostPage } from "@/ui/paginas/blog/blog-post";
-import { blogPosts, getBlogPost } from "@/ui/paginas/blog/posts";
+import { BlogPostPage } from "@/ui/pages/blog/blog-post";
+import { blogPosts, getBlogPost } from "@/ui/pages/blog/posts";
 import { blogPostPath } from "@/lib/blog";
 
 /**

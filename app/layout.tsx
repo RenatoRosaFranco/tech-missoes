@@ -8,11 +8,11 @@
  */
 
 import type { Metadata, Viewport } from "next";
-import { GoogleAnalytics } from "@/ui/componentes/google-analytics/google-analytics";
-import { JsonLd } from "@/ui/componentes/json-ld/json-ld";
+import { GoogleAnalytics } from "@/ui/components/google-analytics/google-analytics";
+import { JsonLd } from "@/ui/components/json-ld/json-ld";
 import { getSiteUrl, googleAnalyticsId, googleSiteVerification, siteDescription, siteName, sitePlace, siteTitle } from "@/lib/site";
 import { siteKeywords } from "@/ui/site/site";
-import "@/ui/site/site.css";
+import "@/ui/site/site.scss";
 
 const siteUrl = getSiteUrl();
 const googleVerification = googleSiteVerification();

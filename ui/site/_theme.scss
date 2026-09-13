@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light;
+  --background: #faf9f6;
+  --foreground: #252623;
+  --red: #9b2635;
+  --border: #deded6;
+  --muted: #65665f;
+  --surface: #eaece5;
+  --surface-hover: #f0eee7;
+  --button-red: #9b2635;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #191a18;
+  --foreground: #f1eee7;
+  --muted: #b6b7ad;
+  --border: #3c3e37;
+  --red: #ef919a;
+  --surface: #252922;
+  --surface-hover: #292c25;
+  --button-red: #a83043;
+}

@@ -5,6 +5,9 @@ const modernPolyfill = path.join(process.cwd(), "lib/modern-polyfill.js");
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  sassOptions: {
+    loadPaths: [path.join(process.cwd(), "ui/site")],
+  },
   experimental: {
     inlineCss: true,
   },
@@ -22,6 +25,13 @@ const nextConfig: NextConfig = {
     };
     return config;
   },
+  async redirects() {
+    return [
+      { source: "/entrar", destination: "/login", permanent: true },
+      { source: "/eventos", destination: "/events", permanent: true },
+      { source: "/hackatons", destination: "/hackathons", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
@@ -29,7 +39,7 @@ const nextConfig: NextConfig = {
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
       {
-        source: "/entrar",
+        source: "/login",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];

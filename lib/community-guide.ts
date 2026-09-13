@@ -9,7 +9,7 @@
 import "server-only";
 import { knowledgePrompt } from "./community-knowledge";
 import { communityGuidePrompt } from "@/prompts/community-guide";
-import { studyTracks } from "@/ui/componentes/trilhas/tracks";
+import { studyTracks } from "@/ui/components/tracks/study-tracks";
 import { siteName, sitePlace } from "@/ui/site/site";
 
 /** Single turn in a community chat conversation. */

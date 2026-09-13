@@ -7,22 +7,22 @@
  * @packageDocumentation
  */
 
-import { chatCopy } from "@/ui/componentes/chat/chat";
-import areas from "@/ui/componentes/areas/areas.json";
-import community from "@/ui/componentes/community/community.json";
-import hero from "@/ui/componentes/hero/hero.json";
-import how from "@/ui/componentes/how/how.json";
-import join from "@/ui/componentes/join/join.json";
-import membership from "@/ui/componentes/membership/membership.json";
-import partnersCopy from "@/ui/componentes/partners/partners.json";
-import principles from "@/ui/componentes/principles/principles.json";
-import kit from "@/ui/componentes/starter-kit/starter-kit.json";
-import technologiesCopy from "@/ui/componentes/technologies/technologies.json";
-import { studyTracks, type StudyTrack, type TrackIcon } from "@/ui/componentes/trilhas/tracks";
-import type { CommunityEvent } from "@/ui/componentes/agenda/agenda";
-import { blogPage, blogPosts } from "@/ui/paginas/blog/posts";
-import eventosPage from "@/ui/paginas/eventos/eventos.json";
-import hackatonsPage from "@/ui/paginas/hackatons/hackatons.json";
+import { chatCopy } from "@/ui/components/chat/chat";
+import areas from "@/ui/components/areas/areas.json";
+import community from "@/ui/components/community/community.json";
+import hero from "@/ui/components/hero/hero.json";
+import how from "@/ui/components/how/how.json";
+import join from "@/ui/components/join/join.json";
+import membership from "@/ui/components/membership/membership.json";
+import partnersCopy from "@/ui/components/partners/partners.json";
+import principles from "@/ui/components/principles/principles.json";
+import kit from "@/ui/components/starter-kit/starter-kit.json";
+import technologiesCopy from "@/ui/components/technologies/technologies.json";
+import { studyTracks, type StudyTrack, type TrackIcon } from "@/ui/components/tracks/study-tracks";
+import type { CommunityEvent } from "@/ui/components/agenda/agenda";
+import { blogPage, blogPosts } from "@/ui/pages/blog/posts";
+import eventsPage from "@/ui/pages/events/events.json";
+import hackathonsPage from "@/ui/pages/hackathons/hackathons.json";
 import { communityLinks, showPartnersSection, siteName, sitePlace, socialProfiles } from "@/ui/site/site";
 
 const homeCopy = {
@@ -42,11 +42,11 @@ const kitProducts = kit.products;
 const starterKit = { price: kit.price, purchaseUrl: kit.purchaseUrl };
 const partners = partnersCopy.items;
 const technologies = technologiesCopy.items;
-const communityEvents = eventosPage.items as CommunityEvent[];
-const communityHackatons = hackatonsPage.items as CommunityEvent[];
+const communityEvents = eventsPage.items as CommunityEvent[];
+const communityHackatons = hackathonsPage.items as CommunityEvent[];
 const pageCopy = {
-  events: eventosPage,
-  hackatons: hackatonsPage,
+  events: eventsPage,
+  hackatons: hackathonsPage,
   blog: blogPage,
 };
 

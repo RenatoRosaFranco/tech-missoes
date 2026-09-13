@@ -1,0 +1,43 @@
+@use "../../site/mixins" as *;
+
+.typed-line {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+
+.typed-sizer {
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.typed-live {
+  position: absolute;
+  inset: 0 auto auto 0;
+  white-space: nowrap;
+}
+
+.typed-cursor {
+  color: var(--red);
+  font-weight: 400;
+  margin-left: 2px;
+
+  h2 & {
+    font-weight: 400;
+  }
+
+  &--blink {
+    animation: typed-cursor-blink 0.7s step-end infinite;
+
+    @include reduced-motion {
+      animation: none;
+    }
+  }
+}
+
+@keyframes typed-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}

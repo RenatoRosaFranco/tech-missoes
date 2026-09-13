@@ -1,0 +1,38 @@
+@use "../../site/mixins" as *;
+
+.theme-toggle {
+  order: 2;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  background: transparent;
+  cursor: pointer;
+  @include motion {
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .25s ease;
+  }
+  &:active {
+    @include motion {
+      transform: scale(.97);
+    }
+  }
+  &:hover {
+    background: var(--surface-hover);
+  }
+  .theme-sun {
+    display: none;
+  }
+  @include dark {
+    .theme-moon {
+      display: none;
+    }
+    .theme-sun {
+      display: block;
+    }
+  }
+}

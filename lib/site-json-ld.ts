@@ -7,10 +7,10 @@
  * @packageDocumentation
  */
 
-import { studyTracks } from "@/ui/componentes/trilhas/tracks";
-import { blogPage, blogPosts } from "@/ui/paginas/blog/posts";
-import eventosPage from "@/ui/paginas/eventos/eventos.json";
-import hackatonsPage from "@/ui/paginas/hackatons/hackatons.json";
+import { studyTracks } from "@/ui/components/tracks/study-tracks";
+import { blogPage, blogPosts } from "@/ui/pages/blog/posts";
+import eventsPage from "@/ui/pages/events/events.json";
+import hackathonsPage from "@/ui/pages/hackathons/hackathons.json";
 import { blogPostPath } from "@/lib/blog";
 import { communityKnowledge } from "@/lib/community-knowledge";
 import { getSiteUrl, siteDescription, siteName, sitePlace, socialUrls } from "@/lib/site";
@@ -107,20 +107,20 @@ export function siteJsonLd() {
       },
       {
         "@type": "WebPage",
-        "@id": `${siteUrl}/eventos`,
-        url: `${siteUrl}/eventos`,
-        name: eventosPage.title,
-        description: eventosPage.description,
+        "@id": `${siteUrl}/events`,
+        url: `${siteUrl}/events`,
+        name: eventsPage.title,
+        description: eventsPage.description,
         inLanguage: "pt-BR",
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
       },
       {
         "@type": "WebPage",
-        "@id": `${siteUrl}/hackatons`,
-        url: `${siteUrl}/hackatons`,
-        name: hackatonsPage.title,
-        description: hackatonsPage.description,
+        "@id": `${siteUrl}/hackathons`,
+        url: `${siteUrl}/hackathons`,
+        name: hackathonsPage.title,
+        description: hackathonsPage.description,
         inLanguage: "pt-BR",
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },

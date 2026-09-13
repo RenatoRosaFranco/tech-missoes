@@ -1,0 +1,58 @@
+@use "../../site/mixins" as *;
+
+.join {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #902735;
+  color: #fff;
+  padding: 52px;
+  gap: 70px;
+  margin-bottom: 70px;
+  @include tablet {
+    padding: 38px;
+    gap: 35px;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    padding: 28px 23px;
+    gap: 28px;
+    margin-bottom: 45px;
+  }
+  .eyebrow {
+    color: #e9bfc3;
+  }
+  h2 {
+    font-size: 43px;
+    margin: 23px 0;
+    @include tablet {
+      font-size: 36px;
+    }
+    @include mobile {
+      font-size: 36px;
+    }
+  }
+  @include dark {
+    background: #65212d;
+  }
+}
+
+.join-copy {
+  > p {
+    color: #ead4d7;
+    font-size: 13px;
+    max-width: 360px;
+  }
+}
+
+.join-note {
+  font-size: 10px;
+  display: block;
+  margin-top: 32px;
+  color: #ecd1d3;
+  @include mobile {
+    margin-top: 20px;
+  }
+  .typed-cursor {
+    font-weight: 400;
+  }
+}

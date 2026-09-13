@@ -5,8 +5,8 @@
  */
 
 import type { Metadata } from "next";
-import { Blog } from "@/ui/paginas/blog/blog";
-import { blogPage } from "@/ui/paginas/blog/posts";
+import { Blog } from "@/ui/pages/blog/blog";
+import { blogPage } from "@/ui/pages/blog/posts";
 
 const page = blogPage;
 

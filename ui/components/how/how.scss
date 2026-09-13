@@ -1,0 +1,58 @@
+@use "../../site/mixins" as *;
+
+.how {
+  h2 {
+    font-size: 35px;
+    @include mobile {
+      font-size: 31px;
+    }
+  }
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+  margin-top: 45px;
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 28px;
+  }
+  h3 {
+    font-size: 19px;
+    font-weight: 500;
+    margin: 20px 0 10px;
+    @include mobile {
+      margin-top: 14px;
+    }
+  }
+  p {
+    font-size: 13px;
+    margin: 0;
+    @include mobile {
+      max-width: 450px;
+    }
+  }
+}
+
+.how-step {
+  @include glow-surface;
+  @include glow-surface-dark;
+  padding: 28px 26px 26px;
+  border: 1px solid color-mix(in srgb, var(--red) 16%, var(--border));
+  background: var(--background);
+  transition: border-color .2s;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--red) 32%, var(--border));
+  }
+}
+
+.step-number {
+  font-family: $font-serif;
+  color: var(--red);
+  font-size: 33px;
+  display: block;
+  padding-top: 0;
+}

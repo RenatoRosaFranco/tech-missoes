@@ -6,7 +6,7 @@
  * @packageDocumentation
  */
 
-import { HomePage } from "@/ui/paginas/home/home";
+import { HomePage } from "@/ui/pages/home/home";
 import { getAmpUrl } from "@/lib/site";
 
 /** Home page with an `amphtml` link for the AMP counterpart. */

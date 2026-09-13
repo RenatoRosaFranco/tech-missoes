@@ -1,0 +1,43 @@
+@use "../../site/mixins" as *;
+
+.location-bar {
+  background: #eee;
+  padding-block: 5px;
+  color: #292a27;
+  font-family: $font-mono;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 33px;
+    @include mobile {
+      min-height: 29px;
+      font-size: 8px;
+      letter-spacing: .7px;
+    }
+  }
+  .container > span:last-child {
+    @include mobile {
+      display: none;
+    }
+  }
+  .typed-cursor {
+    font-size: 9px;
+  }
+  @include dark {
+    background: #000;
+    color: var(--muted);
+  }
+}
+
+.location-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #ca6f6d;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}

@@ -1,0 +1,19 @@
+$font-sans: Arial, Helvetica, sans-serif;
+$font-serif: Georgia, serif;
+$font-mono: monospace;
+
+$bp-desktop: 1450px;
+$bp-tablet: 1100px;
+$bp-narrow: 860px;
+$bp-mobile: 760px;
+
+$container-gutter: 112px;
+$container-gutter-tablet: 64px;
+$container-gutter-mobile: 40px;
+$container-max: 1328px;
+$container-width: calc(100% - $container-gutter);
+
+$header-height: 80px;
+$header-height-mobile: 72px;
+$sticky-offset: 148px;
+$sticky-offset-mobile: 136px;

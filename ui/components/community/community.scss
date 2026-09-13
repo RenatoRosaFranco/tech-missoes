@@ -1,0 +1,64 @@
+@use "../../site/mixins" as *;
+
+.community {
+  background: var(--surface);
+  padding: 65px 0;
+  @include mobile {
+    padding-block: 43px;
+  }
+  @include motion {
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .eyebrow {
+    color: var(--muted);
+  }
+  h2 {
+    font-size: 45px;
+    margin-top: 28px;
+    @include mobile {
+      font-size: 37px;
+      margin-top: 20px;
+    }
+  }
+  h2 em {
+    font-family: $font-serif;
+    font-weight: 400;
+    color: var(--red);
+  }
+}
+
+.community-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 95px;
+  @include tablet {
+    gap: 45px;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  > div > p:not(.community-lead) {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+}
+
+.community-lead {
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--foreground);
+  letter-spacing: -.5px;
+  margin: 0 0 20px;
+  @include mobile {
+    font-size: 22px;
+  }
+}
+
+.community-location {
+  font-family: $font-mono;
+  font-size: 9px;
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 27px;
+}

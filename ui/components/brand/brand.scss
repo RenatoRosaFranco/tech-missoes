@@ -1,0 +1,36 @@
+@use "../../site/mixins" as *;
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  svg {
+    width: 42px;
+    height: 44px;
+    color: var(--red);
+
+    @include mobile {
+      width: 37px;
+    }
+  }
+
+  > span {
+    font-size: 25px;
+    line-height: 0.92;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    @include mobile {
+      font-size: 23px;
+    }
+
+    > span {
+      display: block;
+    }
+  }
+
+  &-period {
+    color: var(--red);
+  }
+}

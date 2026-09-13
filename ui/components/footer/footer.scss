@@ -1,0 +1,133 @@
+@use "../../site/mixins" as *;
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: 30px 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  @include mobile {
+    display: flex;
+    padding-block: 25px;
+  }
+  .brand {
+    transform: scale(.85);
+    transform-origin: left center;
+  }
+  .typed-cursor {
+    font-weight: 400;
+  }
+  .typed-live {
+    white-space: normal;
+  }
+  .typed-sizer {
+    white-space: normal;
+  }
+  > div {
+    font-family: $font-mono;
+    font-size: 9px;
+    line-height: 2;
+    color: var(--muted);
+    @include tablet {
+      flex-basis: 100%;
+    }
+    @include mobile {
+      width: 100%;
+      padding-top: 15px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 8px;
+    }
+  }
+  > div > a {
+    display: block;
+  }
+  > div > a span {
+    margin-left: 15px;
+    color: var(--red);
+    font-size: 15px;
+  }
+  > div > span {
+    display: block;
+  }
+  address {
+    font-style: normal;
+    display: block;
+    margin: 0 0 4px;
+  }
+  p {
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 0;
+    @include mobile {
+      font-size: 10px;
+    }
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  @include mobile {
+    width: auto;
+    justify-content: flex-start;
+  }
+  > a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 44px;
+    font-size: 10px;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--border);
+    background: transparent;
+    border-radius: 50%;
+    flex-shrink: 0;
+    @include motion {
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .25s ease;
+    }
+  }
+  > a:hover {
+    color: var(--red);
+    background: var(--surface-hover);
+    border-color: var(--red);
+    @include motion {
+      transform: translateY(-2px);
+    }
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.social-pending {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  font-size: 10px;
+  color: var(--muted);
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: transparent;
+  border-radius: 50%;
+  flex-shrink: 0;
+  cursor: default;
+  small {
+    display: block;
+    font-size: 8px;
+    margin-top: 3px;
+  }
+}
