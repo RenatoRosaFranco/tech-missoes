@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, type MouseEvent, useEffect, useId, useRef, useState } from "react";
+import { CloseIcon } from "@/components/ui/social-icon";
 
 type Field = {
   university: string;
@@ -254,10 +255,3 @@ function Field({
   );
 }
 
-function CloseIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
-      <path d="M6 6l12 12M18 6 6 18" />
-    </svg>
-  );
-}

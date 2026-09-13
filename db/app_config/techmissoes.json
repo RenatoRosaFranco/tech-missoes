@@ -1,0 +1,529 @@
+{
+  "site": {
+    "name": "Tech Missões",
+    "tagline": "Juntos, construímos o futuro.",
+    "title": "Tech Missões | Comunidade de tecnologia em Cerro Largo, RS",
+    "description": "Comunidade de estudo e desenvolvimento em Cerro Largo, na região das Missões (RS). Software, inteligência artificial, robótica, DevOps, automação e empreendedorismo, na prática e em comunidade.",
+    "locationBar": "CERRO LARGO, RS · REGIÃO DAS MISSÕES",
+    "place": {
+      "locality": "Cerro Largo",
+      "region": "RS",
+      "regionName": "Rio Grande do Sul",
+      "country": "BR",
+      "area": "Região das Missões",
+      "latitude": -28.1333,
+      "longitude": -54.7333
+    },
+    "footer": {
+      "address": "Cerro Largo · Região das Missões · Rio Grande do Sul · Brasil",
+      "credit": "Feito de pessoas e possibilidades."
+    },
+    "sitemapImages": [
+      "/opengraph-image",
+      "/illustrations/community-developer.png",
+      "/illustrations/mousepad.png",
+      "/illustrations/camisa.png",
+      "/illustrations/copo.png"
+    ]
+  },
+  "links": {
+    "whatsapp": "https://chat.whatsapp.com/DxL2QnSAtlSDZhg5dsngr6",
+    "facebook": "",
+    "instagram": "",
+    "youtube": "",
+    "tiktok": ""
+  },
+  "features": {
+    "partners": false
+  },
+  "navigation": {
+    "cta": { "href": "/entrar", "label": "Entrar" },
+    "links": [
+      { "href": "#comunidade", "label": "A comunidade" },
+      { "href": "#areas", "label": "Áreas de estudo" },
+      { "href": "/eventos", "label": "Eventos" },
+      { "href": "/blog", "label": "Blog" },
+      { "href": "#parceiras", "label": "Parceiras", "feature": "partners" },
+      { "href": "#como-funciona", "label": "Como funciona" },
+      { "href": "#starter-kit", "label": "Nosso kit" }
+    ]
+  },
+  "home": {
+    "sections": [
+      { "id": "inicio", "label": "Início" },
+      { "id": "areas", "label": "Áreas de estudo" },
+      { "id": "tecnologias", "label": "Tecnologias e ferramentas" },
+      { "id": "comunidade", "label": "A comunidade" },
+      { "id": "parceiras", "label": "Instituições parceiras", "feature": "partners" },
+      { "id": "como-funciona", "label": "Como funciona" },
+      { "id": "participe", "label": "Trilhas de estudo" },
+      { "id": "faca-parte", "label": "Faça parte da comunidade" },
+      { "id": "starter-kit", "label": "Kit da comunidade" }
+    ],
+    "typed": {
+      "hero": ["o futuro.", "software.", "inteligência.", "robótica.", "automação.", "comunidade."],
+      "location": [
+        "CONHECIMENTO QUE CONECTA. TECNOLOGIA QUE TRANSFORMA.",
+        "APRENDER COM PROFUNDIDADE. CONSTRUIR NA PRÁTICA.",
+        "RAÍZES LOCAIS. CONEXÕES SEM LIMITES."
+      ],
+      "areas": ["Infinitas conexões.", "Seis trilhas abertas.", "Mãos na massa."],
+      "community": ["futuro.", "código.", "território."],
+      "how": ["Aprender. Fazer. Compartilhar."],
+      "join": ["o único pré-requisito.", "o primeiro passo.", "o que nos une."],
+      "membership": ["comunidade.", "conversa.", "construção."],
+      "caption": [
+        "APRENDER É MELHOR QUANDO A GENTE SE CONECTA.",
+        "A CONVERSA COMEÇA NO WHATSAPP.",
+        "DE CERRO LARGO PARA TODAS AS POSSIBILIDADES."
+      ],
+      "footer": ["Conhecimento compartilhado.", "Futuro construído em comunidade."],
+      "kit": ["O kit da comunidade.", "Leve a marca com você.", "Três itens. Uma identidade."],
+      "partners": ["universidades da região.", "instituições das Missões.", "faculdades do noroeste."],
+      "around": ["Possibilidades ao redor.", "Ferramentas ao redor.", "Pessoas ao redor."]
+    },
+    "howSteps": [
+      {
+        "title": "Estudamos juntos",
+        "text": "Grupos de estudo para aprofundar fundamentos, discutir referências e trocar descobertas em cada área."
+      },
+      {
+        "title": "Tiramos ideias do papel",
+        "text": "Projetos colaborativos para experimentar tecnologias e desenvolver soluções conectadas à nossa realidade."
+      },
+      {
+        "title": "Compartilhamos o caminho",
+        "text": "Trocas de experiências, demonstrações e conversas abertas. O aprendizado de uma pessoa abre portas para outras."
+      }
+    ],
+    "copy": {
+      "hero": {
+        "eyebrow": "UMA COMUNIDADE. MUITAS POSSIBILIDADES.",
+        "titleLead": "Juntos,",
+        "titleRest": "construímos",
+        "srOnly": "o futuro.",
+        "lead": "Somos a Tech Missões. Uma comunidade de estudo e desenvolvimento que conecta pessoas para aprender, criar e transformar a nossa região por meio da tecnologia.",
+        "primaryCta": "Faça parte da comunidade",
+        "primaryHref": "#faca-parte",
+        "secondaryCta": "Conheça a comunidade",
+        "secondaryHref": "#comunidade",
+        "footnote": "De Cerro Largo para todas as possibilidades."
+      },
+      "principles": {
+        "kicker": "MENTES CURIOSAS.",
+        "emphasis": "PROPÓSITO EM COMUM.",
+        "items": [
+          "Aprender com profundidade.",
+          "Construir na prática.",
+          "Evoluir em comunidade."
+        ]
+      },
+      "areas": {
+        "eyebrow": "01 / NOSSAS ÁREAS DE ESTUDO",
+        "title": "Seis caminhos.",
+        "lead": "Exploramos as tecnologias que movem o mundo.\nCom fundamentos sólidos e mãos na massa."
+      },
+      "technologies": {
+        "eyebrow": "02 / TECNOLOGIAS E FERRAMENTAS",
+        "title": "Você no centro.",
+        "lead": "Da primeira linha de código ao próximo protótipo.\nExplore as ferramentas que conectam nossas áreas de estudo."
+      },
+      "community": {
+        "eyebrow": "03 / A NOSSA ESSÊNCIA",
+        "title": "Raízes nas Missões.",
+        "titleAfter": "Olhar para o",
+        "lead": "Grandes ideias também nascem\nfora dos grandes centros.",
+        "paragraphs": [
+          "A Tech Missões nasce em Cerro Largo com uma convicção: conhecimento cresce quando é compartilhado. Queremos aproximar quem está começando de quem já tem experiência, unindo diferentes perspectivas em torno de desafios reais.",
+          "Um espaço para perguntar, experimentar e construir. Porque o próximo passo da nossa região pode começar com uma conversa, uma linha de código ou uma ideia sua."
+        ],
+        "location": "CERRO LARGO · RIO GRANDE DO SUL · BRASIL"
+      },
+      "partners": {
+        "eyebrow": "04 / INSTITUIÇÕES PARCEIRAS",
+        "title": "Caminhamos com as",
+        "lead": "Universidades e faculdades da Rota das Missões\ne do noroeste, ao lado de quem estuda e constrói.",
+        "pending": "As parcerias com universidades e institutos da região ainda estão sendo fechadas. Quando estiverem confirmadas, a seção Instituições parceiras entra no site."
+      },
+      "how": {
+        "eyebrow": "05 / DO CONHECIMENTO À PRÁTICA",
+        "lead": "Uma comunidade se constrói com participação.\nCada pessoa tem algo a aprender e a ensinar."
+      },
+      "join": {
+        "eyebrow": "06 / O SEU PONTO DE PARTIDA",
+        "title": "Curiosidade é",
+        "lead": "Iniciante, estudante ou profissional: existe espaço para você. Escolha uma área e descubra um primeiro caminho para colocar seu conhecimento em movimento.",
+        "note": "Diferentes trajetórias. A mesma vontade de aprender.",
+        "openNote": "A comunidade é um espaço aberto de estudo e troca; o site não cobra inscrição para participar."
+      },
+      "membership": {
+        "eyebrow": "07 / A PRÓXIMA CONEXÃO É COM VOCÊ",
+        "title": "Faça parte da",
+        "lead": "Todo mundo tem algo a compartilhar. Traga suas dúvidas, suas ideias e sua vontade de aprender. Vamos construir o próximo capítulo da Tech Missões juntos.",
+        "inviteTitle": "A conversa começa no WhatsApp.",
+        "inviteText": "Conecte-se com pessoas da região, troque referências e encontre companhia para estudar e desenvolver projetos.",
+        "cta": "Entrar no grupo do WhatsApp",
+        "pending": "O convite para o grupo estará disponível em breve."
+      },
+      "kit": {
+        "eyebrow": "08 / LEVE A COMUNIDADE COM VOCÊ",
+        "title": "Seu próximo capítulo.",
+        "lead": "Na mesa de estudos, nas novas ideias e no dia a dia.\nTrês itens para quem aprende e constrói em comunidade.",
+        "productEyebrow": "NO SEU KIT",
+        "orderEyebrow": "KIT DA COMUNIDADE",
+        "orderTitle": "Três itens. Uma identidade em comum.",
+        "orderLead": "Mousepad com guia de consulta, camiseta e copo personalizado.",
+        "disclaimer": "Ilustrações conceituais dos produtos. O visual final pode variar.",
+        "buy": "Comprar meu kit",
+        "soon": "Kit disponível em breve",
+        "availability": "As vendas ainda não começaram."
+      }
+    }
+  },
+  "starterKit": {
+    "price": "",
+    "purchaseUrl": "",
+    "products": [
+      {
+        "type": "mousepad",
+        "number": "01",
+        "title": "Mousepad com guia de consulta",
+        "text": "Seu espaço de trabalho com referências de programação sempre à mão.",
+        "src": "/illustrations/mousepad.png",
+        "alt": "Mousepad vermelho da Tech Missões com a marca da comunidade e um guia de consulta de programação e ferramentas."
+      },
+      {
+        "type": "shirt",
+        "number": "02",
+        "title": "Camiseta da comunidade",
+        "text": "Vista a Tech Missões e leve o espírito da comunidade para onde você for.",
+        "src": "/illustrations/camisa.png",
+        "alt": "Frente e costas da camiseta vermelha da Tech Missões, com a marca da comunidade e o slogan Juntos, construímos o futuro."
+      },
+      {
+        "type": "cup",
+        "number": "03",
+        "title": "Copo personalizado",
+        "text": "Uma companhia para as pausas, as conversas e as próximas linhas de código.",
+        "src": "/illustrations/copo.png",
+        "alt": "Duas vistas do copo vermelho personalizado da Tech Missões, com tampa, marca da comunidade e o slogan Juntos, construímos o futuro."
+      }
+    ]
+  },
+  "tracks": [
+    {
+      "number": "01",
+      "name": "Engenharia de software",
+      "description": "Mais do que escrever código. Entender sistemas, compartilhar boas práticas e construir software que faz a diferença.",
+      "tags": "ARQUITETURA · OPEN SOURCE · DESENVOLVIMENTO",
+      "icon": "code",
+      "steps": [
+        "Explore lógica de programação e controle de versão com Git.",
+        "Construa uma aplicação para um problema da sua comunidade.",
+        "Documente suas decisões e convide alguém para revisar o código."
+      ]
+    },
+    {
+      "number": "02",
+      "name": "Inteligência artificial",
+      "description": "Da curiosidade à aplicação. Investigar dados, entender modelos e experimentar novas possibilidades com responsabilidade.",
+      "tags": "MACHINE LEARNING · DADOS · IA APLICADA",
+      "icon": "ai",
+      "steps": [
+        "Pratique Python explorando pequenos conjuntos de dados.",
+        "Experimente um modelo simples e compare seus resultados.",
+        "Compartilhe o experimento, suas limitações e o que aprendeu."
+      ]
+    },
+    {
+      "number": "03",
+      "name": "Robótica",
+      "description": "Ideias que ganham movimento. Conectar programação, eletrônica e criatividade para interagir com o mundo real.",
+      "tags": "ELETRÔNICA · SENSORES · PROTOTIPAGEM",
+      "icon": "robot",
+      "steps": [
+        "Conheça circuitos, sensores e microcontroladores em um simulador.",
+        "Programe um protótipo que responda a uma leitura de sensor.",
+        "Registre o circuito e o código para que outras pessoas possam reproduzir o projeto."
+      ]
+    },
+    {
+      "number": "04",
+      "name": "DevOps",
+      "description": "Do código à entrega. Entender como uma mudança chega a quem usa, com previsibilidade, colaboração e responsabilidade.",
+      "tags": "CI/CD · INFRAESTRUTURA · OBSERVABILIDADE",
+      "icon": "devops",
+      "steps": [
+        "Monte um repositório com um fluxo simples de build e teste.",
+        "Empacote um projeto em um ambiente reproduzível, como um contêiner.",
+        "Documente o caminho da mudança até a entrega e convide alguém para revisar o processo."
+      ]
+    },
+    {
+      "number": "05",
+      "name": "Automação",
+      "description": "Menos repetição, mais intenção. Identificar tarefas manuais e transformá-las em fluxos que poupam tempo e reduzem erro.",
+      "tags": "SCRIPTS · FLUXOS · INTEGRAÇÕES",
+      "icon": "automation",
+      "steps": [
+        "Liste uma tarefa repetitiva do seu estudo, trabalho ou comunidade.",
+        "Escreva um script ou fluxo que execute essa tarefa do começo ao fim.",
+        "Compartilhe o que automatizou, os limites e o tempo que você ganhou."
+      ]
+    },
+    {
+      "number": "06",
+      "name": "Empreendedorismo",
+      "description": "Ideias que encontram gente e território. Validar problemas, construir em público e transformar conhecimento em iniciativas que servem a região.",
+      "tags": "VALIDAÇÃO · PRODUTO · COMUNIDADE",
+      "icon": "venture",
+      "steps": [
+        "Escolha um problema real da sua cidade ou da sua rotina de estudos.",
+        "Converse com três pessoas afetadas e anote o que elas realmente precisam.",
+        "Esboce uma solução mínima, teste com alguém e registre o que mudaria na próxima versão."
+      ]
+    }
+  ],
+  "technologies": [
+    {
+      "name": "TypeScript",
+      "context": "Código com tipagem",
+      "icon": "typescript",
+      "area": "Software",
+      "description": "Tipos e ferramentas para escrever código mais claro e manter aplicações com confiança."
+    },
+    {
+      "name": "React",
+      "context": "Interfaces interativas",
+      "icon": "reactjs",
+      "area": "Software",
+      "description": "Interfaces construídas com componentes, estado e experiências interativas para a web."
+    },
+    {
+      "name": "Node.js",
+      "context": "APIs e serviços",
+      "icon": "nodejs",
+      "area": "Software",
+      "description": "JavaScript no servidor para desenvolver APIs, serviços e ferramentas de automação."
+    },
+    {
+      "name": "Ruby",
+      "context": "Código expressivo",
+      "icon": "ruby",
+      "area": "Software",
+      "description": "Uma linguagem com foco na clareza e na produtividade para desenvolver aplicações e automatizar tarefas."
+    },
+    {
+      "name": "Rails",
+      "context": "Aplicações web completas",
+      "icon": "ruby-on-rails",
+      "area": "Software",
+      "description": "Um framework em Ruby que reúne convenções e ferramentas para criar aplicações web, da persistência de dados à interface."
+    },
+    {
+      "name": "Python",
+      "context": "Dados e automação",
+      "icon": "python",
+      "area": "Inteligência artificial",
+      "description": "Uma linguagem para explorar dados, experimentar modelos e automatizar tarefas."
+    },
+    {
+      "name": "PyTorch",
+      "context": "Redes neurais",
+      "icon": "pytorch",
+      "area": "Inteligência artificial",
+      "description": "Experimentos com redes neurais para estudar como os modelos aprendem com os dados."
+    },
+    {
+      "name": "Arduino",
+      "context": "Sensores e protótipos",
+      "icon": "arduino",
+      "area": "Robótica",
+      "description": "Programação e eletrônica para conectar sensores, controlar componentes e criar protótipos."
+    },
+    {
+      "name": "Raspberry Pi",
+      "context": "Projetos conectados",
+      "icon": "raspberry-pi",
+      "area": "Robótica",
+      "description": "Computação em pequenos projetos que conectam software, dispositivos e o mundo físico."
+    },
+    {
+      "name": "Git",
+      "context": "Histórico de alterações",
+      "icon": "git",
+      "area": "Colaboração",
+      "description": "Controle de versão para acompanhar mudanças, experimentar ideias e trabalhar em equipe."
+    },
+    {
+      "name": "GitHub",
+      "context": "Revisão de código",
+      "icon": "github",
+      "area": "Colaboração",
+      "description": "Um espaço para compartilhar projetos, revisar código e contribuir com outras pessoas."
+    },
+    {
+      "name": "Docker",
+      "context": "Ambientes reproduzíveis",
+      "icon": "docker",
+      "area": "Infraestrutura",
+      "description": "Ambientes em contêineres para executar e compartilhar projetos de forma consistente."
+    }
+  ],
+  "technologyLayout": {
+    "mobilePositions": [
+      [12, 10],
+      [37, 10],
+      [63, 10],
+      [88, 10],
+      [88, 36],
+      [88, 64],
+      [88, 90],
+      [63, 90],
+      [37, 90],
+      [12, 90],
+      [12, 64],
+      [12, 36]
+    ]
+  },
+  "partners": [
+    { "id": "uffs", "name": "UFFS", "full": "Universidade Federal da Fronteira Sul", "place": "Campus Cerro Largo", "href": "https://www.uffs.edu.br/" },
+    { "id": "uri", "name": "URI", "full": "Universidade Regional Integrada do Alto Uruguai e das Missões", "place": "Santo Ângelo, São Luiz Gonzaga e Cerro Largo", "href": "https://www.uri.br/" },
+    { "id": "unijui", "name": "UNIJUÍ", "full": "Universidade Regional do Noroeste do Estado do Rio Grande do Sul", "place": "Ijuí", "href": "https://www.unijui.edu.br/" },
+    { "id": "setrem", "name": "SETREM", "full": "Sociedade Educacional Três de Maio", "place": "Três de Maio", "href": "https://www.setrem.com.br/" },
+    { "id": "iffar", "name": "IFFar", "full": "Instituto Federal Farroupilha", "place": "Santo Ângelo e rede federal", "href": "https://www.iffarroupilha.edu.br/" },
+    { "id": "unipampa", "name": "UNIPAMPA", "full": "Universidade Federal do Pampa", "place": "São Borja e demais campi", "href": "https://unipampa.edu.br/" },
+    { "id": "fasa", "name": "FASA", "full": "Faculdade Santo Ângelo", "place": "Santo Ângelo", "href": "https://sejafasa.com/" },
+    { "id": "uergs", "name": "UERGS", "full": "Universidade Estadual do Rio Grande do Sul", "place": "Unidade São Luiz Gonzaga", "href": "https://www.uergs.edu.br/" },
+    { "id": "ufsm", "name": "UFSM", "full": "Universidade Federal de Santa Maria", "place": "Campus Palmeira das Missões", "href": "https://www.ufsm.br/unidades-universitarias/palmeira-das-missoes/" },
+    { "id": "unicruz", "name": "UNICRUZ", "full": "Universidade de Cruz Alta", "place": "Cruz Alta", "href": "https://www.unicruz.edu.br/" }
+  ],
+  "blog": [
+    {
+      "slug": "aprender-fora-dos-grandes-centros",
+      "title": "Aprender tecnologia fora dos grandes centros",
+      "excerpt": "Cerro Largo não é o fim da linha. É um ponto de partida: a conversa, o código e a próxima pergunta cabem aqui.",
+      "date": "2026-09-08",
+      "dateLabel": "08 set 2026",
+      "track": "Comunidade",
+      "readingMinutes": 4,
+      "cover": "/blog/territorio.png",
+      "coverAlt": "Arco missioneiro em vinho e creme, com traços de circuito saindo do território.",
+      "author": { "name": "Helena Vargas", "role": "Comunidade Tech Missões", "initials": "HV" },
+      "paragraphs": [
+        "Grandes ideias também nascem fora dos grandes centros. A Tech Missões parte dessa convicção: conhecimento cresce quando é compartilhado, e a região das Missões tem gente curiosa o bastante para pôr a mão na massa.",
+        "Estudar longe das capitais não é espera. É escolha de território. Aqui o problema costuma ter nome, rua e vizinho. Um script, um circuito ou uma conversa no WhatsApp já mudam o dia de alguém.",
+        "O caminho é o mesmo em qualquer mapa: fundamentos sólidos, prática em público e companhia. A diferença é que, nas Missões, o que a gente constrói volta para a cidade que nos formou."
+      ]
+    },
+    {
+      "slug": "primeira-linha-de-codigo",
+      "title": "A primeira linha de código não precisa ser perfeita",
+      "excerpt": "Engenharia de software começa com lógica, Git e um problema real. O resto se aprende em comunidade.",
+      "date": "2026-09-02",
+      "dateLabel": "02 set 2026",
+      "track": "Engenharia de software",
+      "readingMinutes": 5,
+      "cover": "/blog/software.png",
+      "coverAlt": "Mesa de rascunho em creme com a primeira linha traçada em vinho, ainda imperfeita.",
+      "author": { "name": "Mateus Klein", "role": "Engenharia de software", "initials": "MK" },
+      "paragraphs": [
+        "Escrever software é mais do que fazer o programa rodar. É entender o sistema, documentar a decisão e deixar o próximo passo visível para outra pessoa.",
+        "Um primeiro caminho cabe em três gestos: explorar lógica e controle de versão com Git, construir uma aplicação para um problema da sua comunidade e convidar alguém para revisar o código.",
+        "Perfeição na primeira linha é um mito que trava quem está começando. O que abre porta é clareza: o que o programa faz, por que existe e o que ainda falta. Isso se ensina. Isso se compartilha."
+      ]
+    },
+    {
+      "slug": "ia-com-responsabilidade",
+      "title": "Inteligência artificial começa com uma pergunta honesta",
+      "excerpt": "Antes do modelo, o dado. Antes do dado, o problema. Experimentar com responsabilidade é o ofício da trilha.",
+      "date": "2026-08-25",
+      "dateLabel": "25 ago 2026",
+      "track": "Inteligência artificial",
+      "readingMinutes": 4,
+      "cover": "/blog/ia.png",
+      "coverAlt": "Constelação de nós em creme sobre um campo vinho, com algumas conexões de propósito deixadas em aberto.",
+      "author": { "name": "Ana Luísa Weber", "role": "Inteligência artificial", "initials": "AW" },
+      "paragraphs": [
+        "Inteligência artificial não começa no modelo. Começa numa pergunta que cabe no território: que dado existe, o que ele não diz e quem é afetado pelo resultado.",
+        "Na prática da comunidade, o caminho é curto e honesto. Python com conjuntos pequenos, um experimento simples, comparação de resultados e o registro do que o modelo não sabe fazer.",
+        "Responsabilidade aqui não é slogan. É o hábito de publicar a limitação junto com o acerto. Sem isso, a ferramenta impressiona. Com isso, ela ensina."
+      ]
+    },
+    {
+      "slug": "robotica-com-o-que-se-tem-a-mao",
+      "title": "Robótica com o que se tem à mão",
+      "excerpt": "Sensor, protoboard e um pouco de paciência. Ideias ganham movimento quando o circuito encontra o código.",
+      "date": "2026-08-11",
+      "dateLabel": "11 ago 2026",
+      "track": "Robótica",
+      "readingMinutes": 4,
+      "cover": "/blog/robotica.png",
+      "coverAlt": "Protoboard vista de cima, com trilhas de cobre, um sensor e fios sobre a mesa de trabalho.",
+      "author": { "name": "João Pedro Kunz", "role": "Robótica", "initials": "JK" },
+      "paragraphs": [
+        "Robótica é a hora em que a programação sai da tela. Um sensor lê o mundo, um microcontrolador decide, um atuador responde. O laboratório pode ser uma mesa da sala.",
+        "Começar em simulador reduz o medo de queimar peça. Depois vem o protótipo que reage a uma leitura real — luz, distância, um botão. O registro do circuito e do código é o convite para outra pessoa repetir o experimento.",
+        "Não é preciso um ateliê completo. É preciso curiosidade, um passo pequeno e alguém para olhar o que travou. Movimento também se constrói em comunidade."
+      ]
+    }
+  ],
+  "events": [],
+  "pages": {
+    "blog": {
+      "title": "Blog",
+      "description": "Textos da Tech Missões sobre estudo, prática e tecnologia em Cerro Largo e na região das Missões.",
+      "location": "CADERNO DA COMUNIDADE",
+      "footerLine": "O que a gente aprende, a gente escreve.",
+      "eyebrow": "BLOG · CADERNO DA COMUNIDADE",
+      "heading": "O que a gente vai entendendo.",
+      "lead": "Notas de estudo, caminhos nas trilhas e o que a comunidade descobre na prática.\nBusque um texto ou filtre pela trilha."
+    },
+    "events": {
+      "title": "Eventos",
+      "description": "Agenda da Tech Missões em Cerro Largo e na região das Missões: grupos de estudo, encontros e apresentações da comunidade.",
+      "location": "AGENDA DA COMUNIDADE",
+      "footerLine": "A agenda se constrói em comunidade.",
+      "eyebrow": "AGENDA · ENCONTROS DA COMUNIDADE",
+      "heading": "Quando a gente se encontra.",
+      "lead": "Grupos de estudo, conversas abertas e apresentações em Cerro Largo e na região das Missões.\nA agenda ainda está em branco — o primeiro encontro aparece aqui.",
+      "emptyTitle": "Nenhum evento publicado.",
+      "emptyText": "Ainda não há data, lugar nem programação nesta página. Quando a comunidade marcar um encontro, ele entra na agenda."
+    }
+  },
+  "chat": {
+    "welcome": "Olá. Sou o guia da Tech Missões. Posso falar sobre a comunidade, as áreas de estudo, os eventos, o blog, como participar e o kit. O que você quer saber?",
+    "greeting": "Olá. Sou o guia da Tech Missões. Pergunte sobre a comunidade, as áreas de estudo, os eventos, o blog, como participar ou o kit.",
+    "thanks": "Que bom. Se quiser, posso falar de outra área, de como entrar no grupo ou do kit da comunidade.",
+    "fallback": "Consigo responder o que está na comunidade Tech Missões: quem somos, onde nascemos, as áreas de estudo, os eventos, o blog, como participar, as tecnologias e o kit. Reformule com um desses assuntos, ou percorra o site — a conversa da comunidade também começa na seção Faça parte.",
+    "suggestedQuestions": [
+      "O que é a Tech Missões?",
+      "Como faço parte?",
+      "Quais são as áreas de estudo?",
+      "Tem kit da comunidade?"
+    ],
+    "topics": [
+      { "id": "identidade", "title": "O que é a Tech Missões", "keywords": ["tech missoes", "quem sao", "o que e", "comunidade", "sobre", "apresentacao", "voces"], "related": ["essencia", "local", "participar"] },
+      { "id": "essencia", "title": "A essência da comunidade", "keywords": ["essencia", "proposito", "missao", "por que", "conviccao", "raizes", "futuro", "grandes centros"], "related": ["principios", "como-funciona"] },
+      { "id": "local", "title": "Onde estamos", "keywords": ["onde", "local", "cidade", "cerro largo", "missoes", "rio grande do sul", "rs", "brasil", "territorio", "regiao", "endereco"], "related": ["identidade", "participar"] },
+      { "id": "principios", "title": "Princípios", "keywords": ["principio", "valores", "como pensam", "aprender", "construir", "evoluir"], "related": ["como-funciona", "essencia"] },
+      { "id": "areas", "title": "Áreas de estudo", "keywords": ["area", "trilha", "caminho", "estudo", "o que estudam", "eixos", "cursos"], "related": ["software", "inteligencia", "robotica", "devops", "automacao", "empreendedorismo", "tecnologias"] },
+      { "id": "software", "title": "Engenharia de software", "keywords": ["software", "programacao", "codigo", "desenvolvimento", "arquitetura", "open source", "engenharia"], "related": ["areas", "tecnologias", "como-comecar"] },
+      { "id": "inteligencia", "title": "Inteligência artificial", "keywords": ["inteligencia artificial", "ia", "ai", "machine learning", "ml", "dados", "modelo", "python", "pytorch"], "related": ["areas", "tecnologias", "como-comecar"] },
+      { "id": "robotica", "title": "Robótica", "keywords": ["robotica", "robo", "eletronica", "prototipo", "sensor", "arduino", "raspberry", "circuito"], "related": ["areas", "tecnologias", "como-comecar"] },
+      { "id": "devops", "title": "DevOps", "keywords": ["devops", "ci", "cd", "pipeline", "infraestrutura", "observabilidade", "container", "entrega", "deploy"], "related": ["areas", "tecnologias", "automacao", "como-comecar"] },
+      { "id": "automacao", "title": "Automação", "keywords": ["automacao", "automatizar", "script", "scripts", "fluxo", "fluxos", "integracao", "rpa", "tarefa repetitiva"], "related": ["areas", "devops", "tecnologias", "como-comecar"] },
+      { "id": "empreendedorismo", "title": "Empreendedorismo", "keywords": ["empreendedorismo", "empreender", "negocio", "startup", "produto", "validacao", "iniciativa", "comunidade"], "related": ["areas", "como-comecar", "participar"] },
+      { "id": "parceiras", "title": "Instituições parceiras", "keywords": ["universidade", "parceira", "uffs", "uri", "unijui", "setrem", "iffar", "unipampa", "fasa", "uergs", "ufsm", "unicruz", "campus", "faculdade", "instituto"], "related": ["local", "participar", "areas"] },
+      { "id": "como-funciona", "title": "Como a comunidade funciona", "keywords": ["como funciona", "encontros", "grupos", "projetos", "estudo", "pratica", "compartilhar", "evento", "reuniao"], "related": ["principios", "participar"] },
+      { "id": "como-comecar", "title": "Como começar", "keywords": ["comecar", "primeiro", "inicio", "desafio", "iniciante", "por onde", "trilha"], "related": ["software", "inteligencia", "robotica", "devops", "automacao", "empreendedorismo", "participar"] },
+      { "id": "quem", "title": "Quem pode participar", "keywords": ["quem", "pode", "requisito", "idade", "iniciante", "profissional", "estudante", "gratis", "gratuito", "custo"], "related": ["participar", "kit"] },
+      { "id": "participar", "title": "Como fazer parte", "keywords": ["fazer parte", "entrar", "participar", "juntar", "inscrever", "membro", "whatsapp", "zap", "grupo", "wpp", "conversa"], "related": ["quem", "redes"] },
+      { "id": "tecnologias", "title": "Tecnologias e ferramentas", "keywords": ["tecnologia", "ferramenta", "typescript", "react", "node", "ruby", "rails", "python", "pytorch", "git", "github", "docker", "linguagem", "stack"], "related": ["areas", "software", "inteligencia", "robotica", "devops", "automacao"] },
+      { "id": "kit", "title": "Kit da comunidade", "keywords": ["kit", "mousepad", "camiseta", "camisa", "copo", "loja", "comprar", "preco", "produto", "merchandising"], "related": ["identidade", "participar"] },
+      { "id": "redes", "title": "Redes sociais", "keywords": ["rede", "social", "facebook", "instagram", "youtube", "tiktok", "contato", "seguir"], "related": ["participar", "identidade"] },
+      { "id": "eventos", "title": "Eventos", "keywords": ["evento", "eventos", "agenda", "encontro", "encontros", "calendario", "palestra", "workshop", "data"], "related": ["participar", "como-funciona"] },
+      { "id": "blog", "title": "Blog", "keywords": ["blog", "artigo", "artigos", "texto", "textos", "caderno", "leitura", "publicacao", "publicacoes"], "related": ["areas", "essencia"] }
+    ]
+  }
+}

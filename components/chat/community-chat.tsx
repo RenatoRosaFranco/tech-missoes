@@ -1,7 +1,8 @@
 "use client";
 
 import { FormEvent, type ReactNode, useEffect, useId, useRef, useState } from "react";
-import { suggestedQuestions, welcomeMessage } from "@/lib/community-copy";
+import { BrandMark } from "@/components/ui/brand";
+import { CloseIcon } from "@/components/ui/social-icon";
 
 type Message = {
   role: "user" | "assistant";
@@ -44,18 +45,22 @@ function ChatText({ text }: { text: string }) {
   return nodes;
 }
 
-function Mark() {
-  return <svg viewBox="0 0 46 42" fill="currentColor" aria-hidden="true"><path d="M0 0h27v8h-9v34H9V8H0zM23 13h8v29h-8zM35 0h9v42h-9z" /></svg>;
-}
-
-export function CommunityChat({ startOpen = false }: { startOpen?: boolean } = {}) {
+export function CommunityChat({
+  startOpen = false,
+  welcome,
+  questions,
+}: {
+  startOpen?: boolean;
+  welcome: string;
+  questions: string[];
+}) {
   const panelId = useId();
   const inputId = useId();
   const [open, setOpen] = useState(startOpen);
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
-  const [messages, setMessages] = useState<Message[]>([{ role: "assistant", content: welcomeMessage }]);
+  const [messages, setMessages] = useState<Message[]>([{ role: "assistant", content: welcome }]);
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -107,9 +112,15 @@ export function CommunityChat({ startOpen = false }: { startOpen?: boolean } = {
       {open && (
         <section className="chat-panel" id={panelId} role="dialog" aria-modal="false" aria-labelledby="chat-title">
           <header className="chat-head">
-            <div className="chat-brand"><Mark /><div><span className="chat-kicker">POSTO TM · 001</span><strong id="chat-title">Guia da comunidade</strong></div></div>
+            <div className="chat-brand">
+              <BrandMark />
+              <div>
+                <span className="chat-kicker">POSTO TM · 001</span>
+                <strong id="chat-title">Guia da comunidade</strong>
+              </div>
+            </div>
             <button type="button" className="chat-close" onClick={() => setOpen(false)} aria-label="Fechar conversa">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+              <CloseIcon />
             </button>
           </header>
           <div className="chat-log" ref={listRef} aria-live="polite" aria-relevant="additions">
@@ -119,7 +130,7 @@ export function CommunityChat({ startOpen = false }: { startOpen?: boolean } = {
             {pending && <p className="chat-bubble chat-assistant chat-pending" aria-label="O guia está respondendo"><span /><span /><span /></p>}
             {messages.length === 1 && !pending && (
               <div className="chat-suggestions">
-                {suggestedQuestions.map(question => (
+                {questions.map(question => (
                   <button type="button" key={question} onClick={() => void send(question)}>{question}</button>
                 ))}
               </div>
@@ -128,7 +139,17 @@ export function CommunityChat({ startOpen = false }: { startOpen?: boolean } = {
           <form className="chat-form" onSubmit={onSubmit}>
             <label className="sr-only" htmlFor={inputId}>Pergunte sobre a Tech Missões</label>
             <div className="chat-compose">
-              <input id={inputId} ref={inputRef} type="text" maxLength={500} value={input} onChange={event => setInput(event.target.value)} placeholder="Pergunte sobre a comunidade" disabled={pending} autoComplete="off" />
+              <input
+                id={inputId}
+                ref={inputRef}
+                type="text"
+                maxLength={500}
+                value={input}
+                onChange={event => setInput(event.target.value)}
+                placeholder="Pergunte sobre a comunidade"
+                disabled={pending}
+                autoComplete="off"
+              />
               <button type="submit" className="chat-send" disabled={pending || !input.trim()}>Enviar</button>
             </div>
             {error && <p className="chat-error" role="alert">{error}</p>}
@@ -143,7 +164,7 @@ export function CommunityChat({ startOpen = false }: { startOpen?: boolean } = {
         aria-label={open ? "Fechar guia da comunidade" : "Abrir guia da comunidade"}
         onClick={() => setOpen(current => !current)}
       >
-        <Mark />
+        <BrandMark />
       </button>
     </div>
   );

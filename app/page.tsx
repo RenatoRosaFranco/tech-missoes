@@ -1,4 +1,4 @@
-import { HomePage } from "./home-page";
+import { HomePage } from "@/components/home/home-page";
 import { getAmpUrl } from "@/lib/site";
 
 export default function Page() {

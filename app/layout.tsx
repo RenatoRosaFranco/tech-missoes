@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { GoogleAnalytics } from "./google-analytics";
-import { JsonLd } from "./json-ld";
+import { GoogleAnalytics } from "@/components/layout/google-analytics";
+import { JsonLd } from "@/components/layout/json-ld";
 import { getSiteUrl, googleAnalyticsId, googleSiteVerification, siteDescription, siteName, sitePlace, siteTitle } from "@/lib/site";
 import "./globals.css";
 
@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "automação",
     "empreendedorismo",
     "eventos",
+    "blog",
     "estudo de programação",
   ],
   alternates: {

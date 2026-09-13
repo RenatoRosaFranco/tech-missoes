@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { LoginPage } from "./login-page";
+import { LoginPage } from "@/components/auth/login-page";
+import { communityLinks } from "@/lib/app-config";
 
 export const metadata: Metadata = {
   title: "Entrar",
@@ -9,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <LoginPage />;
+  return <LoginPage whatsapp={communityLinks.whatsapp} />;
 }

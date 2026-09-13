@@ -1,4 +1,5 @@
 import { communityKnowledge, knowledgePrompt, type KnowledgeDoc } from "./community-knowledge";
+import { chatCopy, siteName, sitePlace, studyTracks } from "@/lib/app-config";
 
 export type ChatTurn = {
   role: "user" | "assistant";
@@ -23,6 +24,7 @@ const aliases: [RegExp, string][] = [
   [/\b(zap|wpp|whats)\b/g, "whatsapp"],
   [/\b(entrar|juntar|inscrever|membro|participar)\b/g, "fazer parte"],
   [/\b(preco|valor|quanto custa|loja)\b/g, "kit"],
+  [/\b(artigo|artigos|post|posts|caderno|blog)\b/g, "blog"],
   [/\b(cidade|onde fica|localizacao)\b/g, "cerro largo"],
 ];
 
@@ -78,9 +80,7 @@ function retrieve(query: string, history: ChatTurn[]) {
 }
 
 function compose(docs: KnowledgeDoc[]) {
-  if (docs.length === 0) {
-    return "Consigo responder o que está na comunidade Tech Missões: quem somos, onde nascemos, as áreas de estudo, os eventos, como participar, as tecnologias e o kit. Reformule com um desses assuntos, ou percorra o site — a conversa da comunidade também começa na seção Faça parte.";
-  }
+  if (docs.length === 0) return chatCopy.fallback;
   return docs[0].answer;
 }
 
@@ -90,23 +90,31 @@ export function answerFromKnowledge(messages: ChatTurn[]) {
   const query = latest.content.trim();
   const folded = fold(query);
   if (greetings.test(folded)) {
-    return "Olá. Sou o guia da Tech Missões. Pergunte sobre a comunidade, as áreas de estudo, os eventos, como participar ou o kit.";
+    return chatCopy.greeting;
   }
   if (thanks.test(folded)) {
-    return "Que bom. Se quiser, posso falar de outra área, de como entrar no grupo ou do kit da comunidade.";
+    return chatCopy.thanks;
   }
   return compose(retrieve(query, messages));
 }
 
+function trackPromptName(name: string) {
+  return `**${/[a-z][A-Z]/.test(name) ? name : name.toLowerCase()}**`;
+}
+
 export function systemPrompt() {
-  return `Você é o guia da comunidade Tech Missões, em Cerro Largo, na região das Missões, RS.
+  const tracks = studyTracks.map(track => trackPromptName(track.name));
+  const trackList = tracks.length <= 1
+    ? tracks[0] ?? ""
+    : `${tracks.slice(0, -1).join(", ")} e ${tracks[tracks.length - 1]}`;
+  return `Você é o guia da comunidade ${siteName}, em ${sitePlace.locality}, na ${sitePlace.area}, ${sitePlace.region}.
 Responda em português brasileiro, com tom próximo, claro e fiel ao site. No máximo três frases. Sem emojis.
 Use somente os fatos abaixo. Responda só o que foi perguntado, sem juntar assuntos vizinhos.
 Se a pergunta sair desse conteúdo, diga o que você cobre e convide a pessoa a reformular.
-Não invente eventos, preços, links, nomes de pessoas, parcerias ou datas que não estejam no material.
+Não invente eventos, artigos, preços, links, nomes de pessoas, parcerias ou datas que não estejam no material.
 Não cite coordenadas geográficas.
 Quando citar um endereço, use markdown [texto curto](url). Nunca cole a URL completa no meio da frase.
-Ao nomear as áreas de estudo, escreva **engenharia de software**, **inteligência artificial**, **robótica**, **DevOps**, **automação** e **empreendedorismo**.
+Ao nomear as áreas de estudo, escreva ${trackList}.
 
 ${knowledgePrompt()}`;
 }

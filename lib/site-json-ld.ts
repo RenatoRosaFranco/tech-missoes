@@ -1,12 +1,14 @@
+import { blogPosts, pageCopy, studyTracks } from "@/lib/app-config";
+import { blogPostPath } from "@/lib/blog";
 import { communityKnowledge } from "@/lib/community-knowledge";
 import { getSiteUrl, siteDescription, siteName, sitePlace, socialUrls } from "@/lib/site";
-import { studyTracks } from "@/lib/study-tracks";
 
 const faqQuestions: Record<string, string> = {
   identidade: "O que é a Tech Missões?",
   participar: "Como faço parte?",
   areas: "Quais são as áreas de estudo?",
   eventos: "Tem eventos?",
+  blog: "Tem blog?",
   kit: "Tem kit da comunidade?",
 };
 
@@ -85,11 +87,30 @@ export function siteJsonLd() {
         "@type": "WebPage",
         "@id": `${siteUrl}/eventos`,
         url: `${siteUrl}/eventos`,
-        name: "Eventos",
-        description: "Agenda da Tech Missões em Cerro Largo e na região das Missões: grupos de estudo, encontros e apresentações da comunidade.",
+        name: pageCopy.events.title,
+        description: pageCopy.events.description,
         inLanguage: "pt-BR",
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${siteUrl}/blog`,
+        url: `${siteUrl}/blog`,
+        name: pageCopy.blog.title,
+        description: pageCopy.blog.description,
+        inLanguage: "pt-BR",
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: blogPosts.map((post, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: `${siteUrl}${blogPostPath(post.slug)}`,
+            name: post.title,
+          })),
+        },
       },
       {
         "@type": "ItemList",

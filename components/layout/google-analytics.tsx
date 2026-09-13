@@ -1,5 +1,5 @@
 import Script from "next/script";
-import { googleAnalyticsId } from "@/lib/site";
+import { googleAnalyticsId } from "@/lib/site-env";
 
 export function GoogleAnalytics() {
   const gaId = googleAnalyticsId();

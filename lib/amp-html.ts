@@ -1,6 +1,18 @@
-import { communityLinks, starterKit } from "@/app/community-links";
+import {
+  communityLinks,
+  homeCopy,
+  homeTyped,
+  howSteps,
+  kitProducts,
+  locationBarLabel,
+  navCta,
+  navLinks,
+  siteFooter,
+  starterKit,
+  studyTracks,
+  technologies,
+} from "@/lib/app-config";
 import { siteJsonLd } from "@/lib/site-json-ld";
-import { studyTracks } from "@/lib/study-tracks";
 import {
   getSiteUrl,
   googleAnalyticsId,
@@ -18,32 +30,13 @@ function escapeHtml(value: string) {
     .replace(/"/g, "&quot;");
 }
 
-const technologies = [
-  { name: "TypeScript", area: "Software" },
-  { name: "React", area: "Software" },
-  { name: "Node.js", area: "Software" },
-  { name: "Ruby", area: "Software" },
-  { name: "Rails", area: "Software" },
-  { name: "Python", area: "Inteligência artificial" },
-  { name: "PyTorch", area: "Inteligência artificial" },
-  { name: "Arduino", area: "Robótica" },
-  { name: "Raspberry Pi", area: "Robótica" },
-  { name: "Git", area: "Colaboração" },
-  { name: "GitHub", area: "Colaboração" },
-  { name: "Docker", area: "Infraestrutura" },
-];
+function lines(value: string) {
+  return escapeHtml(value).replace(/\n/g, "<br>");
+}
 
-const howSteps = [
-  { title: "Estudamos juntos", text: "Grupos de estudo para aprofundar fundamentos, discutir referências e trocar descobertas em cada área." },
-  { title: "Tiramos ideias do papel", text: "Projetos colaborativos para experimentar tecnologias e desenvolver soluções conectadas à nossa realidade." },
-  { title: "Compartilhamos o caminho", text: "Trocas de experiências, demonstrações e conversas abertas. O aprendizado de uma pessoa abre portas para outras." },
-];
-
-const kitProducts = [
-  { src: "/illustrations/mousepad.png", title: "Mousepad com guia de consulta", text: "Seu espaço de trabalho com referências de programação sempre à mão.", alt: "Mousepad vermelho da Tech Missões com a marca da comunidade e um guia de consulta de programação e ferramentas." },
-  { src: "/illustrations/camisa.png", title: "Camiseta da comunidade", text: "Vista a Tech Missões e leve o espírito da comunidade para onde você for.", alt: "Frente e costas da camiseta vermelha da Tech Missões, com a marca da comunidade e o slogan Juntos, construímos o futuro." },
-  { src: "/illustrations/copo.png", title: "Copo personalizado", text: "Uma companhia para as pausas, as conversas e as próximas linhas de código.", alt: "Duas vistas do copo vermelho personalizado da Tech Missões, com tampa, marca da comunidade e o slogan Juntos, construímos o futuro." },
-];
+function first(values: string[]) {
+  return values[0] ?? "";
+}
 
 const ampCss = `
 :root{--bg:#faf9f6;--fg:#252623;--red:#9b2635;--muted:#65665f;--border:#deded6;--surface:#eaece5}
@@ -120,17 +113,16 @@ export function renderAmpPage() {
   const verification = googleSiteVerification();
   const year = new Date().getFullYear();
   const whatsapp = communityLinks.whatsapp;
-
-  const nav = [
-    ["#comunidade", "A comunidade"],
-    ["#areas", "Áreas de estudo"],
-    ["/eventos", "Eventos"],
-    ["#como-funciona", "Como funciona"],
-    ["#starter-kit", "Nosso kit"],
-    ["/entrar", "Entrar"],
-  ]
-    .map(([href, label]) => `<a href="${escapeHtml(href.startsWith("/") ? `${siteUrl}${href}` : href)}">${escapeHtml(label)}</a>`)
+  const copy = homeCopy;
+  const nav = [...navLinks, navCta]
+    .map(item => `<a href="${escapeHtml(item.href.startsWith("/") ? `${siteUrl}${item.href}` : item.href)}">${escapeHtml(item.label)}</a>`)
     .join("");
+  const kitCta = starterKit.purchaseUrl
+    ? `<a class="btn" href="${escapeHtml(starterKit.purchaseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(copy.kit.buy)} ↗</a>`
+    : `<span class="btn soon">${escapeHtml(copy.kit.soon)} ↗</span><span class="caption">${escapeHtml(copy.kit.availability)}</span>`;
+  const membershipCta = whatsapp
+    ? `<a class="btn" href="${escapeHtml(whatsapp)}" target="_blank" rel="noopener noreferrer">${escapeHtml(copy.membership.cta)} ↗</a>`
+    : `<span class="btn soon">${escapeHtml(copy.membership.pending)}</span>`;
 
   return `<!doctype html>
 <html ⚡ lang="pt-BR">
@@ -156,7 +148,7 @@ ${gaId ? `<amp-analytics type="gtag" data-credentials="include"><script type="ap
 <button class="close" on="tap:menu.close" aria-label="Fechar menu">Fechar −</button>
 <nav aria-label="Navegação principal">${nav}</nav>
 </amp-sidebar>
-<div class="bar"><div class="wrap"><span class="dot"></span>CERRO LARGO, RS · REGIÃO DAS MISSÕES</div></div>
+<div class="bar"><div class="wrap"><span class="dot"></span>${escapeHtml(locationBarLabel)}</div></div>
 <header class="wrap">
 <a class="brand" href="#inicio" aria-label="${escapeHtml(siteName)}, início">
 <svg viewBox="0 0 46 42" aria-hidden="true"><path d="M0 0h27v8h-9v34H9V8H0zM23 13h8v29h-8zM35 0h9v42h-9z"></path></svg>
@@ -166,14 +158,14 @@ ${gaId ? `<amp-analytics type="gtag" data-credentials="include"><script type="ap
 </header>
 <main id="inicio">
 <section class="wrap hero">
-<div class="eyebrow">UMA COMUNIDADE. MUITAS POSSIBILIDADES.</div>
-<h1><em>Juntos,</em> construímos o futuro.</h1>
-<p>Somos a Tech Missões. Uma comunidade de estudo e desenvolvimento que conecta pessoas para aprender, criar e transformar a nossa região por meio da tecnologia.</p>
+<div class="eyebrow">${escapeHtml(copy.hero.eyebrow)}</div>
+<h1><em>${escapeHtml(copy.hero.titleLead)}</em> ${escapeHtml(copy.hero.titleRest)} ${escapeHtml(copy.hero.srOnly)}</h1>
+<p>${escapeHtml(copy.hero.lead)}</p>
 <div class="actions">
-<a class="btn" href="#faca-parte">Faça parte da comunidade ↗</a>
-<a class="full" href="#comunidade">Conheça a comunidade</a>
+<a class="btn" href="${escapeHtml(copy.hero.primaryHref)}">${escapeHtml(copy.hero.primaryCta)} ↗</a>
+<a class="full" href="${escapeHtml(copy.hero.secondaryHref)}">${escapeHtml(copy.hero.secondaryCta)}</a>
 </div>
-<p class="note">+ De Cerro Largo para todas as possibilidades.</p>
+<p class="note">+ ${escapeHtml(copy.hero.footnote)}</p>
 <figure class="art">
 <svg viewBox="0 0 600 590" fill="none" aria-hidden="true">
 <circle cx="308" cy="298" r="210" stroke="#e3a293" stroke-opacity=".3"></circle>
@@ -185,21 +177,19 @@ ${gaId ? `<amp-analytics type="gtag" data-credentials="include"><script type="ap
 </figure>
 </section>
 <div class="wrap principles">
-<strong>MENTES CURIOSAS. PROPÓSITO EM COMUM.</strong>
-<p>Aprender com profundidade.</p>
-<p>Construir na prática.</p>
-<p>Evoluir em comunidade.</p>
+<strong>${escapeHtml(copy.principles.kicker)} ${escapeHtml(copy.principles.emphasis)}</strong>
+${copy.principles.items.map(item => `<p>${escapeHtml(item)}</p>`).join("")}
 </div>
 <section class="wrap section" id="areas">
-<div class="eyebrow">01 / NOSSAS ÁREAS DE ESTUDO</div>
-<h2>Seis caminhos. Infinitas conexões.</h2>
-<p>Exploramos as tecnologias que movem o mundo. Com fundamentos sólidos e mãos na massa.</p>
+<div class="eyebrow">${escapeHtml(copy.areas.eyebrow)}</div>
+<h2>${escapeHtml(copy.areas.title)} ${escapeHtml(first(homeTyped.areas))}</h2>
+<p>${lines(copy.areas.lead)}</p>
 <div class="cards">${studyTracks.map(track => `<article class="card"><span>${escapeHtml(track.number)}</span><h3>${escapeHtml(track.name)}</h3><p>${escapeHtml(track.description)}</p><div class="tags">${escapeHtml(track.tags)}</div></article>`).join("")}</div>
 </section>
 <section class="wrap section" id="tecnologias">
-<div class="eyebrow">02 / TECNOLOGIAS E FERRAMENTAS</div>
-<h2>Você no centro. Possibilidades ao redor.</h2>
-<p>Da primeira linha de código ao próximo protótipo. Explore as ferramentas que conectam nossas áreas de estudo.</p>
+<div class="eyebrow">${escapeHtml(copy.technologies.eyebrow)}</div>
+<h2>${escapeHtml(copy.technologies.title)} ${escapeHtml(first(homeTyped.around))}</h2>
+<p>${lines(copy.technologies.lead)}</p>
 <div class="tech">${technologies.map(item => `<span>${escapeHtml(item.name)}</span>`).join("")}</div>
 <div class="portrait">
 <amp-img src="${escapeHtml(siteUrl)}/illustrations/community-developer.png" width="480" height="480" layout="responsive" alt="Ilustração de uma pessoa desenvolvedora da comunidade Tech Missões."></amp-img>
@@ -207,47 +197,46 @@ ${gaId ? `<amp-analytics type="gtag" data-credentials="include"><script type="ap
 </section>
 <section class="community" id="comunidade">
 <div class="wrap">
-<div class="eyebrow">03 / A NOSSA ESSÊNCIA</div>
-<h2>Raízes nas Missões. Olhar para o futuro.</h2>
-<p class="lead">Grandes ideias também nascem fora dos grandes centros.</p>
-<p>A Tech Missões nasce em Cerro Largo com uma convicção: conhecimento cresce quando é compartilhado. Queremos aproximar quem está começando de quem já tem experiência, unindo diferentes perspectivas em torno de desafios reais.</p>
-<p>Um espaço para perguntar, experimentar e construir. Porque o próximo passo da nossa região pode começar com uma conversa, uma linha de código ou uma ideia sua.</p>
-<span class="place"><span class="dot"></span> CERRO LARGO · RIO GRANDE DO SUL · BRASIL</span>
+<div class="eyebrow">${escapeHtml(copy.community.eyebrow)}</div>
+<h2>${escapeHtml(copy.community.title)} ${escapeHtml(copy.community.titleAfter)} ${escapeHtml(first(homeTyped.community))}</h2>
+<p class="lead">${lines(copy.community.lead)}</p>
+${copy.community.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+<span class="place"><span class="dot"></span> ${escapeHtml(copy.community.location)}</span>
 </div>
 </section>
 <section class="wrap section" id="como-funciona">
-<div class="eyebrow">05 / DO CONHECIMENTO À PRÁTICA</div>
-<h2>Aprender. Fazer. Compartilhar.</h2>
-<p>Uma comunidade se constrói com participação. Cada pessoa tem algo a aprender e a ensinar.</p>
+<div class="eyebrow">${escapeHtml(copy.how.eyebrow)}</div>
+<h2>${escapeHtml(first(homeTyped.how))}</h2>
+<p>${lines(copy.how.lead)}</p>
 <div class="how">${howSteps.map((step, index) => `<article class="step"><span>0${index + 1}</span><h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.text)}</p></article>`).join("")}</div>
 </section>
 <section class="wrap section" id="participe">
-<div class="eyebrow">06 / O SEU PONTO DE PARTIDA</div>
-<h2>Curiosidade é o único pré-requisito.</h2>
-<p>Iniciante, estudante ou profissional: existe espaço para você. Escolha uma área e descubra um primeiro caminho para colocar seu conhecimento em movimento.</p>
+<div class="eyebrow">${escapeHtml(copy.join.eyebrow)}</div>
+<h2>${escapeHtml(copy.join.title)} ${escapeHtml(first(homeTyped.join))}</h2>
+<p>${escapeHtml(copy.join.lead)}</p>
 <div class="cards">${studyTracks.map(track => `<article class="card"><span>SEU PRIMEIRO DESAFIO</span><h3>${escapeHtml(track.name)}</h3><ol>${track.steps.map(step => `<li>${escapeHtml(step)}</li>`).join("")}</ol></article>`).join("")}</div>
 </section>
 <section class="wrap section" id="faca-parte">
-<div class="eyebrow">07 / A PRÓXIMA CONEXÃO É COM VOCÊ</div>
-<h2>Faça parte da comunidade.</h2>
-<p>Todo mundo tem algo a compartilhar. Traga suas dúvidas, suas ideias e sua vontade de aprender. Vamos construir o próximo capítulo da Tech Missões juntos.</p>
+<div class="eyebrow">${escapeHtml(copy.membership.eyebrow)}</div>
+<h2>${escapeHtml(copy.membership.title)} ${escapeHtml(first(homeTyped.membership))}</h2>
+<p>${escapeHtml(copy.membership.lead)}</p>
 <div class="join">
-<h3>A conversa começa no WhatsApp.</h3>
-<p>Conecte-se com pessoas da região, troque referências e encontre companhia para estudar e desenvolver projetos.</p>
-${whatsapp ? `<a class="btn" href="${escapeHtml(whatsapp)}" target="_blank" rel="noopener noreferrer">Entrar no grupo do WhatsApp ↗</a>` : `<span class="btn soon">O convite para o grupo estará disponível em breve.</span>`}
-<span class="caption">APRENDER É MELHOR QUANDO A GENTE SE CONECTA.</span>
+<h3>${escapeHtml(copy.membership.inviteTitle)}</h3>
+<p>${escapeHtml(copy.membership.inviteText)}</p>
+${membershipCta}
+<span class="caption">${escapeHtml(first(homeTyped.caption))}</span>
 </div>
 </section>
 <section class="wrap section" id="starter-kit">
-<div class="eyebrow">08 / LEVE A COMUNIDADE COM VOCÊ</div>
-<h2>Seu próximo capítulo. O kit da comunidade.</h2>
-<p>Na mesa de estudos, nas novas ideias e no dia a dia. Três itens para quem aprende e constrói em comunidade.</p>
-<div class="kit">${kitProducts.map((product, index) => `<article><amp-img src="${escapeHtml(siteUrl)}${product.src}" width="854" height="640" layout="responsive" alt="${escapeHtml(product.alt)}"></amp-img><span class="n">0${index + 1} / NO SEU KIT</span><h3>${escapeHtml(product.title)}</h3><p>${escapeHtml(product.text)}</p></article>`).join("")}</div>
+<div class="eyebrow">${escapeHtml(copy.kit.eyebrow)}</div>
+<h2>${escapeHtml(copy.kit.title)} ${escapeHtml(first(homeTyped.kit))}</h2>
+<p>${lines(copy.kit.lead)}</p>
+<div class="kit">${kitProducts.map(product => `<article><amp-img src="${escapeHtml(siteUrl)}${product.src}" width="854" height="640" layout="responsive" alt="${escapeHtml(product.alt)}"></amp-img><span class="n">${escapeHtml(product.number)} / ${escapeHtml(copy.kit.productEyebrow)}</span><h3>${escapeHtml(product.title)}</h3><p>${escapeHtml(product.text)}</p></article>`).join("")}</div>
 <div class="order">
-<h3>Três itens. Uma identidade em comum.</h3>
-<p>Mousepad com guia de consulta, camiseta e copo personalizado.</p>
-${starterKit.purchaseUrl ? `<a class="btn" href="${escapeHtml(starterKit.purchaseUrl)}" target="_blank" rel="noopener noreferrer">Comprar meu kit ↗</a>` : `<span class="btn soon">Kit disponível em breve ↗</span><span class="caption">As vendas ainda não começaram.</span>`}
-<small>Ilustrações conceituais dos produtos. O visual final pode variar.</small>
+<h3>${escapeHtml(copy.kit.orderTitle)}</h3>
+<p>${escapeHtml(copy.kit.orderLead)}</p>
+${kitCta}
+<small>${escapeHtml(copy.kit.disclaimer)}</small>
 </div>
 </section>
 </main>
@@ -256,8 +245,8 @@ ${starterKit.purchaseUrl ? `<a class="btn" href="${escapeHtml(starterKit.purchas
 <svg viewBox="0 0 46 42" aria-hidden="true"><path d="M0 0h27v8h-9v34H9V8H0zM23 13h8v29h-8zM35 0h9v42h-9z"></path></svg>
 <span>tech<b>missões<span class="period">.</span></b></span>
 </a>
-<p>Conhecimento compartilhado. Futuro construído em comunidade.</p>
-<address>Cerro Largo · Região das Missões · Rio Grande do Sul · Brasil</address>
+<p>${escapeHtml(homeTyped.footer.join(" "))}</p>
+<address>${escapeHtml(siteFooter.address)}</address>
 <span>TECH MISSÕES © ${year}</span>
 <a class="full" href="${escapeHtml(siteUrl)}">Ver versão completa</a>
 </footer>
